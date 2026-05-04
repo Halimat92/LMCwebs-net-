@@ -1,0 +1,3555 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leemah Cakes n More | Cake Jars</title>
+  <meta name="description" content="Luxury cake jars by Leemah Cakes n More. Fresh layered cake jars for gifting, events and sweet cravings in Chelmsford." />
+
+  <!--
+    EASY IMAGE SETUP
+    1. Put this HTML file in a folder.
+    2. Create another folder inside it called: images
+    3. Save your images with these exact file names:
+       images/logo.png
+       images/red-velvet-jar.jpg
+       images/vanilla-dream-jar.jpg
+       images/chocolate-caramel-jar.jpg
+       Images/strawberry.jpeg
+       Images/strawberry-info.jpeg
+       Images/cookies.jpeg
+       Images/cookies-info.jpeg
+    4. Open the HTML file in your browser.
+    If any image is missing, the website will show the illustrated fallback instead.
+  -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --pink: #E8197A;
+      --black: #111111;
+      --cream: #FFF9F5;
+      --blush: #FFEAF3;
+      --gold: #C9A84C;
+      --muted: #8E6F7E;
+      --border: #F0DDE6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--black);
+      font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    button, input, textarea, select { font-family: inherit; }
+
+    .site {
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    /* .topbar {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12px;
+      letter-spacing: .3px;
+    } */
+    .topbar {
+  background: var(--black);
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+.topbar-track {
+  display: flex;
+  width: max-content;
+  animation: announcementScroll 22s linear infinite;
+}
+
+.topbar-track span {
+  display: inline-block;
+  padding: 0 45px;
+}
+
+@keyframes announcementScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+} 
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .lc-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .lc-logo-circle {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid #F6C8DB;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      flex: 0 0 auto;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 999px;
+      display: block;
+    }
+
+    .logo-fallback {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .lc-l, .lc-c {
+      position: absolute;
+      top: -3px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .lc-l { left: 8px; color: var(--pink); }
+    .lc-c { right: 8px; color: var(--black); }
+
+    .lc-cake {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+    }
+
+    .lc-logo-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: .9;
+      color: var(--black);
+    }
+
+    .lc-logo-text span { color: var(--pink); }
+
+    .lc-logo-sub {
+      margin: 5px 0 0;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .22em;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .desktop-nav a {
+      color: #4B4448;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .desktop-nav a:hover { color: var(--pink); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-btn, .menu-btn {
+      height: 44px;
+      width: 44px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .cart-btn {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 12px 26px rgba(232,25,122,.26);
+    }
+
+    .menu-btn {
+      background: var(--blush);
+      color: var(--black);
+      display: none;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      display: none;
+      place-items: center;
+      background: var(--black);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .cart-count.show { display: grid; }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-size: 14px;
+      font-weight: 750;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .2s ease;
+      text-decoration: none;
+      min-height: 45px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: .92;
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 14px 28px rgba(232,25,122,.25);
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--black);
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      border: 1px solid #F3EEF0;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid #EED1DD;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,25,122,.28), transparent 65%);
+      left: 50%;
+      top: -260px;
+      transform: translateX(-50%);
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 76px 20px 90px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,25,122,.12);
+      border: 1px solid rgba(255,158,204,.35);
+      color: #FFB4D7;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .93;
+      letter-spacing: -1.4px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,.68);
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 600px;
+      margin: 24px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero .btn-outline {
+      color: white;
+      border-color: rgba(255,255,255,.25);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 560px;
+    }
+
+    .hero-stat {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.06);
+      border-radius: 24px;
+      padding: 17px;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      color: white;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.08);
+      padding: 16px;
+      border-radius: 42px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.28);
+    }
+
+    .hero-card-inner {
+      background: var(--cream);
+      color: var(--black);
+      border-radius: 34px;
+      padding: 16px;
+    }
+
+    .hero-card-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .hero-card-info h3 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .hero-card-info p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .price-pill {
+      background: var(--black);
+      color: white;
+      border-radius: 18px;
+      padding: 12px 15px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .price-pill small {
+      display: block;
+      color: rgba(255,255,255,.6);
+    }
+
+    .price-pill strong { font-size: 22px; }
+
+    .trust {
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .trust-item {
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 17px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .trust-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--blush);
+      font-size: 20px;
+      flex: 0 0 42px;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 74px 20px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      margin: 0 0 8px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 56px);
+      line-height: .98;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 14px 0 0;
+      line-height: 1.7;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.035);
+      transition: .25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(232,25,122,.12);
+    }
+
+    .product-body { padding: 18px 8px 8px; }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      background: var(--blush);
+      color: var(--pink);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+
+    .product-body h3 {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: #776A71;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .desc {
+      min-height: 92px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .price small {
+      color: var(--muted);
+      display: block;
+      font-size: 12px;
+    }
+
+    .price strong { font-size: 26px; }
+
+    .jar-stage {
+      position: relative;
+      height: 288px;
+      border-radius: 28px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .jar-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.25), transparent 55%, rgba(255,255,255,.12));
+      pointer-events: none;
+    }
+
+    .jar-stage-compact {
+      width: 112px;
+      height: 112px;
+      border-radius: 24px;
+      flex: 0 0 112px;
+    }
+
+    .jar-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 5;
+      background: rgba(255,255,255,.94);
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 850;
+      border-radius: 999px;
+      padding: 6px 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    }
+
+    .jar-stage-compact .jar-badge { display: none; }
+
+    .jar-photo-wrap {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+    }
+
+    .jar-stage-compact .jar-photo-wrap { padding: 10px; }
+
+    .jar-photo {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 18px 26px rgba(0,0,0,.24));
+    }
+
+    .jar-stage-compact .jar-photo {
+      max-width: 88%;
+      max-height: 88%;
+    }
+
+    .jar-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .jar {
+      position: relative;
+      width: 132px;
+      height: 215px;
+      z-index: 4;
+      filter: drop-shadow(0 18px 26px rgba(0,0,0,.28));
+    }
+
+    .jar-compact {
+      width: 54px;
+      height: 88px;
+    }
+
+    .jar-lid {
+      width: 70%;
+      height: 17%;
+      background: linear-gradient(180deg,#E0BE64,#B88E2F);
+      border-radius: 11px 11px 7px 7px;
+      margin: 0 auto;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,.35);
+    }
+
+    .jar-body {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: 13%;
+      bottom: 0;
+      border: 1.5px solid rgba(255,255,255,.75);
+      background: rgba(255,255,255,.14);
+      border-radius: 18px 18px 24px 24px;
+      overflow: hidden;
+    }
+
+    .jar-layer {
+      height: calc(100% / 6);
+      opacity: .95;
+    }
+
+    .jar-shine {
+      position: absolute;
+      top: 16px;
+      left: 12px;
+      width: 16px;
+      height: 105px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.25);
+    }
+
+    .jar-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      background: rgba(255,255,255,.96);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+      border: 1px dashed var(--pink);
+    }
+
+    .jar-label strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .jar-label span {
+      margin-top: 3px;
+      color: var(--pink);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+
+    .jar-compact .jar-label {
+      width: 30px;
+      height: 30px;
+    }
+
+    .jar-compact .jar-label strong { font-size: 10px; }
+    .jar-compact .jar-label span { display: none; }
+
+
+
+    /* PRODUCT IMAGE SLIDER: front image + ingredients/allergy information */
+    .product-slider { position: relative; }
+    .slide { display: none; width: 100%; height: 100%; }
+    .slide.active { display: grid; place-items: center; }
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,.96);
+      color: var(--black);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0,0,0,.18);
+    }
+    .slider-arrow:hover {
+      background: white;
+    }
+    .slider-arrow-right {
+      right: 14px;
+    }
+    .slider-arrow-left {
+      left: 14px;
+    }
+    @media (max-width: 640px) {
+      .slider-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+      }
+      .slider-arrow-right {
+        right: 10px;
+      }
+      .slider-arrow-left {
+        left: 10px;
+      }
+    }
+    .info-slide-card {
+      width: calc(100% - 34px);
+      min-height: 212px;
+      background: rgba(255,255,255,.95);
+      border-radius: 24px;
+      padding: 22px;
+      color: var(--black);
+      box-shadow: 0 14px 32px rgba(0,0,0,.14);
+      position: relative;
+      z-index: 4;
+    }
+    .info-slide-card h4 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+    }
+    .info-slide-card p {
+      margin: 8px 0;
+      color: #6f5662;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    .info-slide-card strong { color: var(--pink); }
+
+    /* BUNDLE DEALS */
+    .bundle-section {
+      background: linear-gradient(135deg, #fffaf4 0%, #fff0f7 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .bundle-hero {
+      border-radius: 36px;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 25%, rgba(201,168,76,.28), transparent 32%), linear-gradient(135deg, #0f0a0c 0%, #2a0717 55%, #4b0826 100%);
+      color: white;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.16);
+    }
+    .bundle-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e9ca67;
+      border: 1px solid rgba(201,168,76,.48);
+      background: rgba(201,168,76,.08);
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .bundle-hero h2 {
+      margin: 24px 0 0;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: .95;
+    }
+    .bundle-hero h2 span { color: var(--gold); font-style: italic; }
+    .bundle-hero p {
+      color: rgba(255,255,255,.68);
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 18px 0 0;
+    }
+    .bundle-jars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+    }
+    .mini-jar {
+      width: 70px;
+      height: 108px;
+      border-radius: 12px 12px 17px 17px;
+      border: 1px solid rgba(255,255,255,.55);
+      overflow: hidden;
+      background: rgba(255,255,255,.2);
+      position: relative;
+      box-shadow: 0 14px 22px rgba(0,0,0,.22);
+    }
+    .mini-jar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 18%;
+      right: 18%;
+      height: 16px;
+      background: linear-gradient(180deg,#E0BE64,#B88E2F);
+      border-radius: 0 0 5px 5px;
+      z-index: 2;
+    }
+    .mini-jar div { height: 16.6%; }
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .bundle-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.05);
+      position: relative;
+    }
+    .bundle-card.featured {
+      border: 2px solid var(--pink);
+      box-shadow: 0 20px 55px rgba(232,25,122,.16);
+    }
+    .popular-ribbon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pink);
+      color: white;
+      border-radius: 0 0 18px 18px;
+      padding: 8px 24px;
+      font-size: 13px;
+      font-weight: 850;
+      z-index: 4;
+      white-space: nowrap;
+    }
+    .bundle-header {
+      color: white;
+      display: grid;
+      grid-template-rows: auto minmax(245px, 1fr);
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .bundle-header::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      right: -70px;
+      top: -55px;
+      pointer-events: none;
+    }
+    .bundle-title-block {
+      position: relative;
+      z-index: 3;
+      padding: 26px 28px 18px;
+    }
+    .bundle-header h3 {
+      margin: 0;
+      font-size: 42px;
+      line-height: .95;
+      position: relative;
+      z-index: 2;
+    }
+    .bundle-header span {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      color: rgba(255,255,255,.82);
+      font-weight: 650;
+      font-family: 'Outfit', sans-serif;
+    }
+    .bundle-image-wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 245px;
+      background: rgba(255,255,255,.96);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .bundle-image {
+      width: 100%;
+      height: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      display: block;
+      padding: 10px;
+    }
+    .bundle-image-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      align-items: center;
+      justify-content: center;
+    }
+    .bundle-card-body { padding: 24px; }
+    .bundle-card-body p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 14px;
+    }
+    .save-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF0F7;
+      color: var(--pink);
+      border: 1px solid #F8C5DB;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .bundle-price-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .bundle-price { font-size: 36px; font-weight: 900; letter-spacing: -.5px; }
+    .bundle-old-price {
+      color: #a88998;
+      text-decoration: line-through;
+      margin-left: 8px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .per-jar {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .bundle-note {
+      margin-top: 22px;
+      background: white;
+      border: 1px dashed rgba(232,25,122,.35);
+      border-radius: 24px;
+      padding: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+
+
+    /* COMING SOON, ABOUT THE BAKER AND DELIVERY CARDS */
+    .coming-soon-section {
+      background: white;
+      padding: 74px 0;
+      overflow: hidden;
+    }
+
+    .coming-soon-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .coming-soon-title {
+      margin: 0;
+      font-size: clamp(46px, 6vw, 78px);
+      line-height: .95;
+      letter-spacing: -1.2px;
+      color: var(--black);
+    }
+
+    .coming-soon-title em {
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .coming-soon-intro {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 18px 0 36px;
+    }
+
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .coming-soon-card {
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.035);
+    }
+
+    .coming-soon-card-top {
+      min-height: 230px;
+      padding: 44px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 24px;
+      color: white;
+      background: linear-gradient(135deg, #0e0e0e 0%, #1c0d14 54%, #3b0920 100%);
+    }
+
+    .coming-soon-card:nth-child(2) .coming-soon-card-top {
+      background: linear-gradient(135deg, #1b0731 0%, #2b0630 52%, #5c0c2f 100%);
+    }
+
+    .coming-icon {
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .coming-pill {
+      display: block;
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.11);
+      color: rgba(255,255,255,.86);
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon-card h3 {
+      margin: 0;
+      color: white;
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .coming-soon-card-body {
+      padding: 28px 32px 30px;
+    }
+
+    .coming-soon-card-body p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .notify-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .notify-form input {
+      border: 1px solid #F0CFE0;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font: inherit;
+      outline: none;
+    }
+
+    .notify-form input:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(232,25,122,.1);
+    }
+
+    .notify-form button {
+      border: none;
+      border-radius: 999px;
+      background: var(--black);
+      color: white;
+      padding: 14px 22px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .about-baker-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-baker-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 74px 20px;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .baker-image-card {
+      min-height: 440px;
+      border-radius: 46px;
+      background: #F9DCE9;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #F4C9DA;
+      box-shadow: 0 18px 45px rgba(232,25,122,.08);
+    }
+
+    .baker-image-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .baker-fallback {
+      font-size: 78px;
+    }
+
+    .about-baker-content h2 {
+      margin: 0;
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: .95;
+    }
+
+    .about-baker-content h2 span {
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .about-baker-content p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.85;
+      margin: 22px 0 0;
+    }
+
+    .delivery-info-section {
+      background: #FDE8F1;
+      padding: 58px 20px;
+    }
+
+    .delivery-info-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .delivery-info-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: 0 8px 24px rgba(0,0,0,.035);
+    }
+
+    .delivery-info-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #FFE1EE;
+      display: grid;
+      place-items: center;
+      flex: 0 0 58px;
+      font-size: 27px;
+    }
+
+    .delivery-info-card h3 {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .delivery-info-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .stripe-dev-note {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .coming-soon-grid,
+      .about-baker-inner,
+      .delivery-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .coming-soon-section { padding: 54px 0; }
+      .coming-soon-inner { padding: 0 16px; }
+      .coming-soon-card-top { min-height: 205px; padding: 30px 26px; }
+      .coming-soon-card h3 { font-size: 36px; }
+      .coming-soon-card-body { padding: 24px 20px; }
+      .notify-form { grid-template-columns: 1fr; }
+      .about-baker-inner { padding: 54px 16px; gap: 32px; }
+      .baker-image-card, .baker-image-card img { min-height: 330px; }
+      .delivery-info-section { padding: 42px 16px; }
+      .delivery-info-card { padding: 20px; }
+    }
+
+    /* CUSTOM CAKE ADVERT */
+    .custom-cake-section { background: var(--black); color: white; }
+    .custom-cake-card {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 74px 20px;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 34px;
+      align-items: center;
+    }
+    /* .custom-cake-image {
+      min-height: 360px;
+      border-radius: 40px;
+      background: radial-gradient(circle at 30% 20%, rgba(232,25,122,.32), transparent 34%), linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      display: grid;
+      place-items: center;
+      font-size: 110px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    } */
+
+    .custom-cake-image {
+  min-height: 420px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 30px 80px rgba(0,0,0,.28);
+  background: rgba(255,255,255,.06);
+}
+
+.custom-cake-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+    .custom-cake-content h2 {
+      margin: 0;
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: .96;
+    }
+    .custom-cake-content p {
+      color: rgba(255,255,255,.68);
+      line-height: 1.8;
+      font-size: 17px;
+      margin: 18px 0 0;
+    }
+    .custom-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 30px;
+    }
+    .custom-tags span {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.88);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    /* CHECKOUT OPTIONS */
+    .checkout-option-grid { display: grid; gap: 10px; margin: 16px 0 8px; }
+    .fulfilment-option {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      cursor: pointer;
+    }
+    .fulfilment-option input { accent-color: var(--pink); transform: scale(1.15); }
+    .fulfilment-option strong { display: block; margin-bottom: 3px; }
+    .fulfilment-option small { display: block; color: var(--muted); line-height: 1.4; }
+    .min-order-warning {
+      background: #FFF4E5;
+      color: #7a4a00;
+      border: 1px solid #FFDDA3;
+      padding: 12px 14px;
+      border-radius: 18px;
+      line-height: 1.5;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .gift-section { background: var(--blush); }
+
+    .gift-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 74px 20px;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .gift-card {
+      background: var(--black);
+      color: white;
+      border-radius: 40px;
+      padding: 24px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.18);
+    }
+
+    .gift-card-inner {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: 32px;
+      padding: 30px;
+    }
+
+    .gift-card h2 {
+      margin: 18px 0 0;
+      font-size: 48px;
+      line-height: 1;
+    }
+
+    .gift-card p {
+      color: rgba(255,255,255,.66);
+      line-height: 1.75;
+      margin: 18px 0 0;
+    }
+
+    .steps {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 26px;
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      font-weight: 800;
+      flex: 0 0 42px;
+    }
+
+    .step h3 {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .reviews { text-align: center; }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+      text-align: left;
+    }
+
+    .review-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.035);
+    }
+
+    .review-card blockquote {
+      margin: 14px 0 0;
+      color: #2A0A18;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .review-author {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .review-author strong { display: block; }
+    .review-author span { color: var(--muted); font-size: 12px; }
+
+    .footer {
+      background: var(--black);
+      color: white;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 20px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+    }
+
+    .footer .lc-logo-text,
+    .footer .lc-logo-sub { color: white; }
+
+    .footer-copy {
+      color: rgba(255,255,255,.58);
+      line-height: 1.75;
+      max-width: 470px;
+      margin-top: 24px;
+    }
+
+    .footer-list {
+      display: grid;
+      gap: 12px;
+      color: rgba(255,255,255,.72);
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .socials a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      color: white;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      font-size: 19px;
+      transition: 0.2s ease;
+    }
+
+    .socials a:hover {
+      background: var(--pink);
+      transform: translateY(-2px);
+    }
+
+    .enquiry-card {
+      background: white;
+      color: var(--black);
+      border-radius: 32px;
+      padding: 26px;
+    }
+
+    .enquiry-card h2 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .enquiry-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .form-grid { display: grid; gap: 16px; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field span {
+      display: block;
+      font-size: 14px;
+      font-weight: 750;
+      margin-bottom: 7px;
+      color: #2B2528;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 18px;
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 108px;
+      resize: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(232,25,122,.1);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 20px;
+      text-align: center;
+      color: rgba(255,255,255,.38);
+      font-size: 12px;
+    }
+
+    .mobile-sticky { display: none; }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: rgba(0,0,0,.55);
+      display: none;
+    }
+
+    .mobile-menu.show { display: block; }
+
+    .mobile-menu-panel {
+      margin-left: auto;
+      height: 100%;
+      width: 320px;
+      max-width: 90%;
+      background: white;
+      padding: 22px;
+      animation: slideIn .22s ease both;
+    }
+
+    .mobile-menu-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .mobile-menu-close {
+      border: none;
+      background: var(--blush);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .mobile-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mobile-links a {
+      background: var(--blush);
+      padding: 16px;
+      border-radius: 18px;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(0,0,0,.62);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 12px;
+    }
+
+    .modal-backdrop.show { display: flex; }
+
+    .modal-card {
+      background: var(--cream);
+      width: 100%;
+      max-width: 590px;
+      max-height: 92vh;
+      overflow-y: auto;
+      border-radius: 34px;
+      padding: 24px;
+      position: relative;
+      animation: modalUp .24s ease both;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .modal-card h2 {
+      margin: 10px 0 0;
+      font-size: 38px;
+    }
+
+    .modal-sub {
+      color: var(--muted);
+      margin: 6px 0 22px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .empty-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      margin: 0 auto 18px;
+    }
+
+    .cart-items {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .cart-item {
+      background: white;
+      border-radius: 26px;
+      padding: 12px;
+      display: flex;
+      gap: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .cart-line-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cart-line-top strong { display: block; }
+    .cart-line-top span { color: var(--muted); font-size: 13px; }
+
+    .remove-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .cart-line-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      gap: 12px;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      background: white;
+    }
+
+    .qty-control button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--blush);
+      color: var(--pink);
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .qty-control button:last-child {
+      background: var(--pink);
+      color: white;
+    }
+
+    .qty-control strong {
+      min-width: 22px;
+      text-align: center;
+    }
+
+    .summary {
+      margin-top: 22px;
+      background: white;
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .summary-row strong { color: var(--black); }
+
+    .summary-total {
+      border-top: 1px solid var(--border);
+      margin-top: 12px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .payment-box {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 26px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .payment-placeholder {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      background: #FAFAFA;
+      border-radius: 18px;
+      padding: 16px;
+      color: #999;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .success {
+      text-align: center;
+      padding: 34px 0 16px;
+    }
+
+    .success-icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes modalUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .desktop-nav, .header-actions .btn-light { display: none; }
+      .menu-btn { display: grid; }
+      .hero-inner, .gift-inner, .footer-inner, .custom-cake-card, .bundle-hero { grid-template-columns: 1fr; }
+      .hero-inner { padding-top: 52px; }
+      .trust-grid, .product-grid, .review-grid, .bundle-grid { grid-template-columns: 1fr 1fr; }
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { font-size: 11px; }
+      .header-inner { padding: 13px 14px; }
+      .lc-logo-circle {
+        width: 46px;
+        height: 46px;
+      }
+      .lc-l, .lc-c { font-size: 33px; }
+      .lc-logo-text { font-size: 19px; }
+      .hero-inner {
+        padding: 42px 16px 64px;
+        gap: 32px;
+      }
+      h1 { font-size: 48px; }
+      .hero p { font-size: 15px; }
+      .hero-actions { flex-direction: column; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .hero-card-info {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .trust-grid, .product-grid, .review-grid, .bundle-grid { grid-template-columns: 1fr; }
+      .trust-grid { padding: 18px 16px; }
+      .section, .gift-inner, .footer-inner, .custom-cake-card { padding: 54px 16px; }
+      .bundle-hero { padding: 30px 22px; }
+      .bundle-header { grid-template-rows: auto minmax(230px, 1fr); }
+      .bundle-title-block { padding: 24px 24px 16px; }
+      .bundle-header h3 { font-size: 36px; }
+      .bundle-image-wrap { min-height: 230px; }
+      .bundle-image { max-height: 245px; padding: 8px; }
+      .two-col { grid-template-columns: 1fr; }
+      .mobile-sticky {
+        display: block;
+        position: fixed;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 45;
+        width: calc(100% - 24px);
+        max-width: 430px;
+        background: rgba(255,255,255,.96);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px;
+        box-shadow: 0 18px 50px rgba(0,0,0,.18);
+      }
+      .mobile-sticky-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .footer { padding-bottom: 80px; }
+      .modal-backdrop {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal-card {
+        border-radius: 28px 28px 0 0;
+        max-height: 90vh;
+      }
+    }
+
+
+    /* ORDER POLICY NOTE - ADDED ONLY */
+    .order-policy-note {
+      background: #FFF4E5;
+      color: #7a4a00;
+      border: 1px solid #FFDDA3;
+      border-radius: 18px;
+      padding: 12px 14px;
+      line-height: 1.5;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* NEED HELP CHATBOT - ADDED ONLY */
+    .help-chatbot {
+      position: fixed;
+      right: 22px;
+      bottom: 24px;
+      z-index: 95;
+      font-family: 'Outfit', system-ui, sans-serif;
+    }
+
+    .help-chatbot-button {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: none;
+      background: var(--pink);
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(232,25,122,.35);
+      display: grid;
+      place-items: center;
+    }
+
+    .help-chatbot-box {
+      position: absolute;
+      right: 0;
+      bottom: 78px;
+      width: 340px;
+      max-width: calc(100vw - 32px);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.24);
+      overflow: hidden;
+      display: none;
+    }
+
+    .help-chatbot-box.show {
+      display: block;
+    }
+
+    .help-chatbot-head {
+      background: var(--black);
+      color: white;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .help-chatbot-head strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .help-chatbot-head span {
+      display: block;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    .help-chatbot-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,.12);
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .help-chatbot-body {
+      padding: 16px;
+      max-height: 430px;
+      overflow-y: auto;
+    }
+
+    .help-chatbot-message {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 13px 14px;
+      color: #3A1A2A;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .help-chatbot-options {
+      display: grid;
+      gap: 9px;
+    }
+
+    .help-chatbot-option {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--black);
+      border-radius: 16px;
+      padding: 12px 13px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 750;
+      transition: .2s ease;
+    }
+
+    .help-chatbot-option:hover {
+      border-color: var(--pink);
+      background: var(--blush);
+    }
+
+    .help-chatbot-response {
+      margin-top: 12px;
+      background: #FFF0F7;
+      border-left: 4px solid var(--pink);
+      border-radius: 16px;
+      padding: 13px 14px;
+      color: #3A1A2A;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .help-chatbot-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .help-chatbot-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      background: var(--pink);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .help-chatbot-link.dark {
+      background: var(--black);
+    }
+
+    @media (max-width: 640px) {
+      .help-chatbot {
+        right: 14px;
+        bottom: 92px;
+      }
+
+      .help-chatbot-button {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+      }
+
+      .help-chatbot-box {
+        width: calc(100vw - 28px);
+        right: -2px;
+        bottom: 70px;
+      }
+    }
+
+
+    /* ══ REVIEW SYSTEM CSS ══ */
+    .review-form-wrapper {
+      margin-top: 52px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.04);
+      text-align: left;
+    }
+    .review-form-wrapper h3 { margin: 0 0 6px; font-size: 30px; }
+    .review-form-sub { color: var(--muted); margin: 0 0 24px; font-size: 14px; line-height: 1.6; }
+    .star-picker-label { display: block; font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .1em; }
+    .star-picker { display: flex; gap: 4px; margin-bottom: 22px; }
+    .star-picker label { font-size: 36px; cursor: pointer; color: #DDD; transition: color .12s, transform .12s; line-height: 1; user-select: none; }
+    .star-picker label:hover, .star-picker label.lit { color: var(--gold); transform: scale(1.12); }
+    .review-submitted-msg { display: none; background: #F0FFF4; border: 1px solid #A8D5B5; border-radius: 18px; padding: 18px 22px; color: #1A6632; font-size: 15px; font-weight: 600; text-align: center; margin-top: 16px; }
+    .review-submitted-msg.show { display: block; }
+
+    /* Admin panel */
+    .admin-panel { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.7); backdrop-filter: blur(6px); display: none; justify-content: center; align-items: center; padding: 16px; }
+    .admin-panel.show { display: flex; }
+    .admin-card { background: white; border-radius: 28px; width: 100%; max-width: 660px; max-height: 90vh; overflow-y: auto; padding: 28px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
+    .admin-card h2 { margin: 0 0 4px; font-size: 30px; }
+    .admin-sub { color: var(--muted); margin: 0 0 22px; font-size: 14px; }
+    .admin-close { position: absolute; top: 18px; right: 18px; border: none; background: var(--blush); border-radius: 50%; width: 40px; height: 40px; font-size: 22px; cursor: pointer; }
+    .admin-login { display: flex; flex-direction: column; gap: 12px; }
+    .admin-login input { border: 1.5px solid var(--border); border-radius: 14px; padding: 13px 16px; font-size: 14px; font-family: inherit; outline: none; width: 100%; }
+    .admin-login input:focus { border-color: var(--pink); }
+    .admin-tabs { display: flex; gap: 8px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .admin-tab { padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--border); background: white; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+    .admin-tab.active { background: var(--pink); color: white; border-color: var(--pink); }
+    .admin-tab-badge { background: rgba(0,0,0,.12); border-radius: 999px; padding: 1px 7px; font-size: 11px; }
+    .admin-tab.active .admin-tab-badge { background: rgba(255,255,255,.25); }
+    .admin-empty { text-align: center; padding: 36px 0; color: var(--muted); font-size: 15px; }
+
+    .review-item { background: var(--cream); border: 1px solid var(--border); border-radius: 20px; padding: 18px; margin-bottom: 12px; }
+    .review-item-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .review-item-top strong { font-size: 15px; display: block; }
+    .review-item-stars { color: var(--gold); font-size: 15px; margin: 3px 0; }
+    .review-item-meta { font-size: 12px; color: var(--muted); }
+    .review-item blockquote { margin: 0 0 14px; font-style: italic; color: #3A1A2A; font-size: 14px; line-height: 1.6; border-left: 3px solid var(--border); padding-left: 12px; }
+    .review-item.approved-item { background: #F0FFF4; border-color: #A8D5B5; }
+    .review-item-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-approve { background: #1A6632; color: white; border: none; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .btn-reject { background: #FEE2E2; color: #991B1B; border: none; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .btn-delete { background: #1C1C1C; color: white; border: none; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+
+    @media (max-width: 640px) {
+      .review-form-wrapper { padding: 22px 16px; }
+      .admin-card { padding: 20px 16px; }
+    }
+    /* ══ END REVIEW SYSTEM CSS ══ */
+  </style>
+</head>
+
+<body>
+  <div class="site">
+    <!-- <div class="topbar">Fresh dessert jars in Chelmsford · Collection and  delivery available across uk · Custom orders welcome</div> -->
+    <div class="topbar">
+  <div class="topbar-track">
+    <span>Fresh dessert jars in Chelmsford · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
+    <span>Fresh dessert jars in Chelmsford · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
+  </div>
+</div>
+    <header class="header">
+      <div class="header-inner">
+        <a class="lc-logo" href="#home" aria-label="Leemah Cakes home">
+          <div class="lc-logo-circle">
+            <img class="brand-logo-img" src="Images/logo.jpeg" alt="Leemah Cakes logo" onerror="showLogoFallback(this)">
+            <div class="logo-fallback">
+              <span class="lc-l">L</span>
+              <span class="lc-c">C</span>
+              <span class="lc-cake">🎂</span>
+            </div>
+          </div>
+          <div>
+            <p class="lc-logo-text">Leemah <span>Cakes</span></p>
+            <p class="lc-logo-sub">Cakes n More</p>
+          </div>
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="#flavours">Flavours</a>
+          <a href="#bundles">Bundles</a>
+          <a href="#custom-cakes">Custom Cakes</a>
+          <a href="#coming-soon">Coming Soon</a>
+          <a href="#about-baker">About</a>
+          <a href="#delivery-info">Delivery</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-light" data-open-custom>Custom enquiry</button>
+          <!-- <button class="cart-btn" data-open-cart aria-label="Open cart">🛍️<span class="cart-count" data-cart-count>0</span></button> -->
+          <button class="cart-btn" data-open-cart aria-label="Open cart">🛒<span class="cart-count" data-cart-count>0</span></button>
+          <button class="menu-btn" data-open-menu aria-label="Open menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu-panel">
+        <div class="mobile-menu-head">
+          <div class="lc-logo">
+            <div class="lc-logo-circle">
+              <img class="brand-logo-img" src="Images/logo.jpeg" alt="Leemah Cakes logo" onerror="showLogoFallback(this)">
+              <div class="logo-fallback">
+                <span class="lc-l">L</span>
+                <span class="lc-c">C</span>
+                <span class="lc-cake">🎂</span>
+              </div>
+            </div>
+            <div>
+              <p class="lc-logo-text">Leemah <span>Cakes</span></p>
+              <p class="lc-logo-sub">Cakes n More</p>
+            </div>
+          </div>
+          <button class="mobile-menu-close" data-close-menu>×</button>
+        </div>
+
+        <div class="mobile-links">
+          <a href="#flavours" data-mobile-link>Flavours</a>
+          <a href="#bundles" data-mobile-link>Bundles</a>
+          <a href="#custom-cakes" data-mobile-link>Custom Cakes</a>
+          <a href="#coming-soon" data-mobile-link>Coming Soon</a>
+          <a href="#about-baker" data-mobile-link>About</a>
+          <a href="#delivery-info" data-mobile-link>Delivery</a>
+          <a href="#how-it-works" data-mobile-link>How it works</a>
+          <a href="#reviews" data-mobile-link>Reviews</a>
+          <a href="#contact" data-mobile-link>Contact</a>
+          <button class="btn btn-primary" data-open-custom>Custom enquiry</button>
+        </div>
+      </div>
+    </div>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="eyebrow">✨ Indulgence in every layer</div>
+            <h1>Luxury dessert jars made fresh to satisfy your cravings.</h1>
+            <p>Premium layered dessert jars from Leemah Cakes n More. Perfect for gifting, birthdays, treat boxes, events and personal cravings.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#flavours">Shop dessert jars ›</a>
+              <a class="btn btn-outline" href="#bundles">View bundles</a>
+              <button class="btn btn-outline" data-open-custom>Request custom order</button>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat"><strong>Fresh</strong><span>Made to order</span></div>
+              <div class="hero-stat"><strong>Gift</strong><span>Add a personal note</span></div>
+              <div class="hero-stat"><strong>Local</strong><span>Chelmsford based</span></div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <div id="hero-jar"></div>
+              <div class="hero-card-info">
+                <div>
+                  <h3>Signature Jar Box</h3>
+                  <p>Mix any flavours, add a gift note and choose your quantity.</p>
+                </div>
+                <div class="price-pill"><small>From</small><strong>£7.28</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <div class="trust-grid">
+          <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Delivery</strong><span>Pickup, 1st or 2nd Class</span></div></div>
+          <div class="trust-item"><div class="trust-icon">✅</div><div><strong>Food Safety</strong><span>Allergen note included</span></div></div>
+          <div class="trust-item"><div class="trust-icon">🎁</div><div><strong>Gift Ready</strong><span>Perfect for surprises</span></div></div>
+          <div class="trust-item"><div class="trust-icon">2️⃣</div><div><strong>Minimum Order</strong><span>Starts from 2 jars</span></div></div>
+        </div>
+      </section>
+
+      <section id="flavours" class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Shop the collection</p>
+            <h2>Dessert jar flavours</h2>
+            <p class="section-desc">Minimum order is 2 jars.</p>
+          </div>
+          <a class="btn btn-dark" href="#bundles">View bundle deals</a>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+
+      <section id="bundles" class="bundle-section">
+        <div class="section">
+          <div class="bundle-hero">
+            <div>
+              <div class="bundle-pill">🎁 Bundle Deals</div>
+              <h2>More Jars,<br><span>More Savings</span></h2>
+              <p>Choose from 3-jar, 4-jar and 6-jar bundles. Mix and match your favourite flavours for gifting, events or sweet cravings.</p>
+              <a class="btn btn-primary" href="#bundle-grid" style="margin-top: 24px;">View Bundle Deals →</a>
+            </div>
+            <div class="bundle-jars">
+              <!-- <div class="mini-jar"><div style="background:#7B0714"></div><div style="background:#FFF4F4"></div><div style="background:#A30F22"></div><div style="background:#FFF4F4"></div><div style="background:#7B0714"></div><div style="background:#FFF4F4"></div></div>
+              <div class="mini-jar" style="height:130px;width:84px;"><div style="background:#E3C879"></div><div style="background:#FFFDF4"></div><div style="background:#D9B765"></div><div style="background:#FFFDF4"></div><div style="background:#E3C879"></div><div style="background:#FFFDF4"></div></div>
+              <div class="mini-jar"><div style="background:#251006"></div><div style="background:#F1D39A"></div><div style="background:#4B220D"></div><div style="background:#F1D39A"></div><div style="background:#251006"></div><div style="background:#F1D39A"></div></div> -->
+            </div>
+          </div>
+
+          <div class="bundle-grid" id="bundle-grid"></div>
+
+          <div class="bundle-note">
+            <strong>Mix and match flavours:</strong> When you select a bundle, add your preferred flavour combination in the checkout note. For example: 1 Rouge Velvet, 1 Ivory Dream. In the final website, this can become a proper flavour selector for each jar in the bundle.
+          </div>
+        </div>
+      </section>
+
+      <section id="coming-soon" class="coming-soon-section">
+        <div class="coming-soon-inner">
+          <p class="section-kicker">Coming soon</p>
+          <h2 class="coming-soon-title">Something <em>exciting</em> is coming</h2>
+          <p class="coming-soon-intro">We are busy baking up something new. Sign up below to be the first to know when these drop!</p>
+
+          <div class="coming-soon-grid">
+            <article class="coming-soon-card">
+              <div class="coming-soon-card-top">
+                <div class="coming-icon">🍰</div>
+                <span class="coming-pill">Coming soon</span>
+                <h3>Cake Slices</h3>
+              </div>
+              <div class="coming-soon-card-body">
+                <p>Our signature flavours in a generous slice. Rich, layered and ready to enjoy. Perfect for birthdays, celebrations and gifting.</p>
+                <form class="notify-form" data-notify-form>
+                  <input type="email" name="email" placeholder="Your email address" required>
+                  <button type="submit">Notify me</button>
+                </form>
+              </div>
+            </article>
+
+            <article class="coming-soon-card">
+              <div class="coming-soon-card-top">
+                <div class="coming-icon">🎂</div>
+                <span class="coming-pill">Coming soon</span>
+                <h3>Mini Naked Cakes</h3>
+              </div>
+              <div class="coming-soon-card-body">
+                <p>Beautifully rustic mini naked cakes for events, weddings, birthdays and sweet tables. Customisable flavours and decorations available.</p>
+                <form class="notify-form" data-notify-form>
+                  <input type="email" name="email" placeholder="Your email address" required>
+                  <button type="submit">Notify me</button>
+                </form>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-baker" class="about-baker-section">
+        <div class="about-baker-inner">
+          <div class="baker-image-card">
+            <img src="Images/baker.jpg" alt="Leemah, the baker behind Leemah Cakes n More" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="baker-fallback" style="display:none;">👩🏽‍🍳</div>
+          </div>
+          <div class="about-baker-content">
+            <p class="section-kicker">The baker behind the jars</p>
+            <h2>Hi, I’m <span>Leemah</span></h2>
+            <p>I’m a Chelmsford-based baker with a deep love for creating desserts that bring joy to people. What started as a passion for baking for family and friends has grown into Leemah Cakes n More.</p>
+            <p>Every jar is made fresh by hand with real ingredients and a lot of love. I believe that everyone deserves a little indulgence, and I want every bite to feel like a special moment.</p>
+            <p>Whether you are treating yourself, gifting someone special or ordering for an event, I put the same care and attention into every single order.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="delivery-info" class="delivery-info-section">
+        <div class="delivery-info-grid">
+          <article class="delivery-info-card">
+            <div class="delivery-info-icon">📦</div>
+            <div>
+              <h3>Standard Delivery</h3>
+              <p>2nd Class Royal Mail. Delivery price is calculated by order weight at checkout.</p>
+            </div>
+          </article>
+          <article class="delivery-info-card">
+            <div class="delivery-info-icon">⚡</div>
+            <div>
+              <h3>Express Delivery</h3>
+              <p>1st Class Royal Mail. Delivery price is calculated by order weight at checkout.</p>
+            </div>
+          </article>
+          <article class="delivery-info-card">
+            <div class="delivery-info-icon">📍</div>
+            <div>
+              <h3>Local Collection</h3>
+              <p>Free collection from Chelmsford. You will receive a collection update after ordering.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="custom-cakes" class="custom-cake-section">
+        <div class="custom-cake-card">
+          <!-- <div class="custom-cake-image">🎂</div> -->
+           <div class="custom-cake-image">
+  <img src="Images/custom-cake.png" alt="Custom celebration cakes by Leemah Cakes n More">
+</div>
+          <div class="custom-cake-content">
+            <div class="eyebrow">Custom cakes available</div>
+            <h2>Celebration cakes for birthdays, weddings and special moments.</h2>
+            <p>Planning a birthday, wedding, anniversary, baby shower or celebration? Tell us your date, design idea, serving size, flavour and budget using our quick quote form.</p>
+            <p><strong>The form takes about 2 minutes to complete, and we’ll get back to you with availability and pricing.</strong></p>
+            <div class="custom-tags">
+              <span>Birthdays</span>
+              <span>Weddings</span>
+              <span>Celebrations</span>
+              <span>Baby showers</span>
+              <span>Anniversaries</span>
+            </div>
+            <!-- <button class="btn btn-primary" data-open-custom>Get a Quote in 2 Minutes</button> -->
+             <a 
+  class="btn btn-primary" 
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdtMWZdKEJ-cSH-xo0O8HQ_l6G6aOK7HtV3tH2eKtxP2zXvxQ/viewform?usp=header" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Get a Quote in 2 Minutes
+</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="gift-section">
+        <div class="gift-inner">
+          <div class="gift-card">
+            <div class="gift-card-inner">
+              <div style="font-size: 52px;">🎁</div>
+              <h2>Personalised dessert jars for gifting and events</h2>
+              <p>Add a name, message, theme colour or quantity request. Great for birthdays, bridal boxes, thank-you gifts, Eid treats, party favours and small event dessert tables.</p>
+              <button class="btn btn-primary" style="margin-top: 26px;" data-open-custom>Send custom enquiry</button>
+            </div>
+          </div>
+
+          <div id="how-it-works">
+            <p class="section-kicker">Easy ordering</p>
+            <h2 style="font-size: 52px; margin: 0;">How it works</h2>
+
+            <div class="steps">
+              <div class="step"><div class="step-num">1</div><div><h3>Choose your flavour or bundle</h3><p>Select your favourite jar or choose a 3, 4 or 6 jar bundle.</p></div></div>
+              <div class="step"><div class="step-num">2</div><div><h3>Add to cart</h3><p>Minimum order is 2 jars. Review your quantity before checkout.</p></div></div>
+              <div class="step"><div class="step-num">3</div><div><h3>Select delivery</h3><p>Choose pickup, 1st Class delivery or 2nd Class delivery. Delivery price updates based on the number of jars.</p></div></div>
+              <div class="step"><div class="step-num">4</div><div><h3>Enjoy or gift</h3><p>Perfect for yourself, loved ones, events or a small luxury treat.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="section reviews">
+        <p class="section-kicker">Customer love</p>
+        <h2>Sweet words from customers</h2>
+
+        <!-- REAL CUSTOMER REVIEWS - DO NOT REMOVE -->
+        <div class="review-grid" id="reviews-grid">
+          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“The cake jars looked beautiful and tasted even better. I ordered them as a gift and everyone loved them.”</blockquote><div class="review-author"><div class="avatar">G</div><div><strong>Gbemmy</strong><span>Verified customer</span></div></div></div>
+          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“The packaging was so neat and premium. Rouge velvet is definitely my favourite. I will order again.”</blockquote><div class="review-author"><div class="avatar">T</div><div><strong>Temi O.</strong><span>Verified customer</span></div></div></div>
+          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“I’ve tried a lot of cake jars, but this one stands out. The taste is 100% and every layer is so rich and delicious. I’ll definitely be ordering more!”</blockquote><div class="review-author"><div class="avatar">O</div><div><strong>Oppy</strong><span>Verified customer</span></div></div></div>
+        </div>
+
+        <!-- REVIEW SUBMISSION FORM -->
+        <div class="review-form-wrapper">
+          <h3>Leave a review ⭐</h3>
+          <p class="review-form-sub">Had an order with us? We’d love to hear your honest feedback!</p>
+          <form id="review-form">
+            <span class="star-picker-label">Your rating *</span>
+            <div class="star-picker" id="star-picker">
+              <label data-val="1">★</label>
+              <label data-val="2">★</label>
+              <label data-val="3">★</label>
+              <label data-val="4">★</label>
+              <label data-val="5">★</label>
+            </div>
+            <input type="hidden" id="review-rating" value="0">
+            <div class="two-col" style="margin-bottom:14px">
+              <label class="field"><span>Your name *</span><input id="review-name" required placeholder="e.g. Sarah M." /></label>
+              <label class="field"><span>Flavour you ordered *</span>
+                <select id="review-flavour">
+                  <option value="">Select flavour...</option>
+                  <option>Rouge Velvet</option>
+                  <option>Ivory Dream</option>
+                  <option>Caramel Noir</option>
+                  <option>Strawberry Bliss</option>
+                  <option>Cookies &amp; Cream Noir</option>
+                  <option>Bundle / Mixed</option>
+                </select>
+              </label>
+            </div>
+            <label class="field" style="margin-bottom:20px">
+              <span>Your review *</span>
+              <textarea id="review-text" required placeholder="Tell us what you thought with the taste, packaging, delivery, anything!" style="min-height:110px;resize:none"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit" style="width:100%">Submit </button>
+          </form>
+          <div class="review-submitted-msg" id="review-submitted-msg">🎉 Thank you for your review! It will appear here once we’ve approved it. We really appreciate your feedback!</div>
+        </div>
+      </section>
+
+      <!-- OLD LOCALSTORAGE REVIEW ADMIN PANEL COMMENTED OUT
+      This old password/backend review panel was browser-only, so reviews only showed on the same device.
+      Approval is now handled in Google Sheets by changing Status from Pending to Approved.
+      -->
+      <section id="contact" class="footer">
+        <div class="footer-inner">
+          <div>
+            <div class="lc-logo">
+              <div class="lc-logo-circle">
+                <img class="brand-logo-img" src="Images/logo.jpeg" alt="Leemah Cakes logo" onerror="showLogoFallback(this)">
+                <div class="logo-fallback">
+                  <span class="lc-l">L</span>
+                  <span class="lc-c">C</span>
+                  <span class="lc-cake">🎂</span>
+                </div>
+              </div>
+              <div>
+                <p class="lc-logo-text">Leemah <span>Cakes</span></p>
+                <p class="lc-logo-sub">Cakes n More</p>
+              </div>
+            </div>
+
+            <p class="footer-copy">Leemah Cakes n More creates beautiful cakes, cake jars and sweet treats for special moments in Chelmsford and surrounding areas.</p>
+            <div class="footer-list">
+              <span>📍 Chelmsford, Essex</span>
+              <span>✉️ hello@leemahcakes.co.uk</span>
+              <span>💬 WhatsApp orders accepted</span>
+              <span>🕒 Order Policy: Ready for pickup or shipped within 48 hours. Cancellations after 6 hours may not be refundable.</span>
+            </div>
+            <div class="socials">
+              <a href="https://www.instagram.com/leemahcakesnmore/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/447848281501" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="https://www.tiktok.com/@leemahcakes.chelmsford" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="enquiry-card">
+            <h2>Quick enquiry</h2>
+            <p>Have a question or special request? Send us a quick message and we’ll get back to you.</p>
+            <form class="form-grid" id="quick-enquiry-form" name="quick-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="quick-enquiry">
+              <p style="display:none;"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+              <div class="two-col">
+                <label class="field"><span>Name</span><input name="name" required placeholder="Your name" /></label>
+                <label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label>
+              </div>
+              <label class="field"><span>What do you need?</span><textarea name="message" required placeholder="Write your enquiry here. You can ask about availability, orders, delivery, flavours, custom cakes or anything else."></textarea></label>
+              <button class="btn btn-primary" type="submit">Send enquiry</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright">© 2026 Leemah Cakes n More. All rights reserved. Allergen notice: products may contain or come into contact with allergens.</div>
+      </section>
+    </main>
+
+    <div class="mobile-sticky">
+      <div class="mobile-sticky-inner">
+        <a class="btn btn-outline" href="#bundles">🎁 Bundles</a>
+        <!-- <button class="btn btn-primary" data-open-cart>🛍️ Cart (<span data-cart-count-inline>0</span>)</button> -->
+        <button class="btn btn-primary" data-open-cart>🛒 Cart (<span data-cart-count-inline>0</span>)</button> 
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="cart-modal">
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal>×</button>
+      <h2>Your cart</h2>
+      <p class="modal-sub">Review your jars before checkout. Minimum order: 2 jars.</p>
+      <div id="cart-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal>×</button>
+      <div id="checkout-content"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="custom-modal">
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal>×</button>
+      <h2>Custom order enquiry</h2>
+      <p class="modal-sub">For custom cakes, dessert jars, birthdays, celebrations, weddings and bulk orders. This form takes about 2 minutes to fill, and we’ll get back to you.</p>
+
+      <form class="form-grid" id="custom-form" name="custom-order-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="custom-order-enquiry">
+        <p style="display:none;"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+        <div class="two-col">
+          <label class="field"><span>Name</span><input name="name" required placeholder="Your name" /></label>
+          <label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label>
+        </div>
+
+        <div class="two-col">
+          <label class="field"><span>Phone</span><input name="phone" placeholder="Optional" /></label>
+          <label class="field"><span>Date needed</span><input name="date-needed" type="date" /></label>
+        </div>
+
+        <div class="two-col">
+          <label class="field">
+            <span>Preferred flavour</span>
+            <select name="preferred-flavour">
+              <option>Rouge Velvet</option>
+              <option>Ivory Dream</option>
+              <option>Caramel Noir</option>
+              <option>Strawberry Bliss</option>
+              <option>Cookies & Cream Noir</option>
+              <option>Mixed flavours</option>
+            </select>
+          </label>
+          <label class="field"><span>Quantity / serving size</span><input name="quantity-serving-size" placeholder="e.g. 12 jars or 20 servings" /></label>
+        </div>
+
+        <label class="field"><span>Details</span><textarea name="details" placeholder="Tell me the occasion, colour theme, message, delivery/collection preference and any allergy information."></textarea></label>
+        <button class="btn btn-primary" type="submit" style="width: 100%;">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- NEED HELP CHATBOT - ADDED ONLY -->
+  <div class="help-chatbot">
+    <div class="help-chatbot-box" id="help-chatbot-box">
+      <div class="help-chatbot-head">
+        <div>
+          <strong>Need help?</strong>
+          <span>Quick answers for jars, bundles, delivery, allergies and custom cakes.</span>
+        </div>
+        <button class="help-chatbot-close" type="button" onclick="toggleHelpChatbot()">×</button>
+      </div>
+
+      <div class="help-chatbot-body">
+        <div class="help-chatbot-message">Hi lovely 👋 What do you need help with?</div>
+
+        <div class="help-chatbot-options">
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('jars')">I want to order dessert jars</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('bundles')">I want to view bundle deals</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('customCake')">I need a custom event cake quote</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('delivery')">Delivery and pickup information</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('allergy')">Allergy and ingredients information</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('whatsapp')">I want to speak to someone</button>
+        </div>
+
+        <div id="help-chatbot-response"></div>
+      </div>
+    </div>
+
+    <button class="help-chatbot-button" type="button" onclick="toggleHelpChatbot()" aria-label="Open help chat">
+      💬
+    </button>
+  </div>
+
+
+  <script>
+
+    /* NEED HELP CHATBOT - ADDED ONLY */
+    const helpCustomCakeQuoteLink = "https://docs.google.com/forms/d/e/1FAIpQLSdtMWZdKEJ-cSH-xo0O8HQ_l6G6aOK7HtV3tH2eKtxP2zXvxQ/viewform?usp=header";
+
+    /* Replace this with your real WhatsApp number later. Use international format without the first 0. */
+    const helpWhatsappLink = "https://wa.me/447848281501";
+
+    function toggleHelpChatbot() {
+      const chatbotBox = document.getElementById("help-chatbot-box");
+      if (!chatbotBox) return;
+      chatbotBox.classList.toggle("show");
+    }
+
+    function closeHelpChatbot() {
+      const chatbotBox = document.getElementById("help-chatbot-box");
+      if (!chatbotBox) return;
+      chatbotBox.classList.remove("show");
+    }
+
+    function showHelpAnswer(type) {
+      const response = document.getElementById("help-chatbot-response");
+      if (!response) return;
+
+      const answers = {
+        jars: `
+          <div class="help-chatbot-response">
+            <strong>Dessert jar orders</strong><br>
+            Our dessert jars are freshly made and the minimum order is 2 jars. You can choose single flavours or bundle deals.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="#flavours" onclick="closeHelpChatbot()">Shop jars</a>
+              <a class="help-chatbot-link dark" href="#bundles" onclick="closeHelpChatbot()">View bundles</a>
+            </div>
+          </div>
+        `,
+
+        bundles: `
+          <div class="help-chatbot-response">
+            <strong>Bundle deals</strong><br>
+            We currently offer 3-jar, 4-jar and 6-jar bundles. You can mix and match flavours.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="#bundles" onclick="closeHelpChatbot()">See bundle deals</a>
+            </div>
+          </div>
+        `,
+
+        customCake: `
+          <div class="help-chatbot-response">
+            <strong>Custom event cakes</strong><br>
+            For birthdays, weddings, baby showers, anniversaries and celebration cakes, please fill our quick quote form. It takes about 2 minutes and we’ll get back to you.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="${helpCustomCakeQuoteLink}" target="_blank" rel="noopener noreferrer">Get a cake quote</a>
+            </div>
+          </div>
+        `,
+
+        delivery: `
+          <div class="help-chatbot-response">
+            <strong>Delivery and pickup</strong><br>
+            At checkout, you can choose pickup, 1st Class delivery or 2nd Class delivery. Delivery fee is calculated based on the number of jars in your order. Orders are ready for pickup or shipped within 48 hours. Cancellations after 6 hours may not be refundable.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="#how-it-works" onclick="closeHelpChatbot()">How it works</a>
+            </div>
+          </div>
+        `,
+
+        allergy: `
+          <div class="help-chatbot-response">
+            <strong>Allergy information</strong><br>
+            Each dessert jar has an ingredients and allergy information slide in the product image section. Please check before ordering. Our products are made in a kitchen that handles allergens.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="#flavours" onclick="closeHelpChatbot()">View flavours</a>
+            </div>
+          </div>
+        `,
+
+        whatsapp: `
+          <div class="help-chatbot-response">
+            <strong>Speak to us</strong><br>
+            Need more help? You can message us directly on WhatsApp and we’ll be happy to assist.
+            <div class="help-chatbot-actions">
+              <a class="help-chatbot-link" href="${helpWhatsappLink}" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            </div>
+          </div>
+        `
+      };
+
+      response.innerHTML = answers[type] || "";
+    }
+
+    const products = [
+      {
+        id: "red-velvet",
+        type: "product",
+        name: "Rouge Velvet Cake Jar",
+        shortName: "Rouge Velvet",
+        subtitle: "Cream cheese layers",
+        description: "Soft red velvet sponge layered with smooth cream cheese frosting and finished for a rich, indulgent treat.",
+        price: 7.28,
+        jarCount: 1,
+        tag: "Best Seller",
+        bg: "linear-gradient(135deg,#5A0810 0%,#B9152A 48%,#F5A3B3 100%)",
+        image: "Images/red.jpeg",
+        infoImage: "Images/red-info.jpeg",
+        ingredients: "Wheat flour, sugar, butter, eggs, milk, cocoa powder, cream cheese, icing sugar, vinegar, baking powder, baking soda, salt,food colouring, vanilla flavouring.",
+        allergens: "Contains gluten, egg and milk. Prepared in a kitchen that handles other allergens.",
+        layers: ["#6B0710", "#FFF4F4", "#A30F22", "#FFF4F4", "#7B0714", "#FFF4F4"]
+      },
+      {
+        id: "vanilla-cake",
+        type: "product",
+        name: "Ivory Dream Cake Jar",
+        shortName: "Ivory Dream",
+        subtitle: "Lemon cream layers",
+        description: "Moist vanilla with silky whipped lemon cream. Simple, soft and perfect for birthdays, gifts and everyday cravings.",
+        price: 7.28,
+        jarCount: 1,
+        tag: "New",
+        bg: "linear-gradient(135deg,#E8D4A4 0%,#FFF8E8 50%,#D7B75C 100%)",
+        image: "Images/vanilla.jpeg",
+        infoImage: "Images/vanilla-info.jpeg",
+        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, whipping cream, icing sugar, baking powder, salt, flavouring.",
+        allergens: "wheat (gluten), eggs, milk, soya. Prepared in a kitchen that handles other allergens.",
+        layers: ["#E3C879", "#FFFDF4", "#D9B765", "#FFFDF4", "#E3C879", "#FFFDF4"]
+      },
+      {
+        id: "chocolate-caramel",
+        type: "product",
+        name: "Caramel Noir Cake Jar",
+        shortName: "Caramel Noir",
+        subtitle: "Rich caramel layers",
+        description: "Chocolate cake layered with caramel and smooth frosting. Deep, cosy and made for serious dessert lovers.",
+        price: 7.28,
+        jarCount: 1,
+        tag: "Customer Love",
+        bg: "linear-gradient(135deg,#1B0C05 0%,#5C351C 52%,#D89952 100%)",
+        image: "Images/choco.jpeg",
+        infoImage: "Images/choco-info.jpeg",
+        ingredients: "Wheat flour, granulated sugar, brown sugar, sunflower oil, eggs, milk, condensed milk, cocoa powder, golden syrup, whipping cream, chocolate, vinegar, baking soda, salt, flavouring.",
+        allergens: "wheat (gluten), eggs, milk. Prepared in a kitchen that handles other allergens.",
+        layers: ["#251006", "#F1D39A", "#4B220D", "#F1D39A", "#251006", "#F1D39A"]
+      },
+      {
+        id: "strawberry-bliss",
+        type: "product",
+        name: "Strawberry Bliss Cake Jar",
+        shortName: "Strawberry Bliss",
+        subtitle: "Strawberry compote layers",
+        description: "Soft strawberry sponge layered with strawberry compote and silky whipped cream for a fresh, fruity and indulgent treat.",
+        price: 7.28,
+        jarCount: 1,
+        tag: "Fruity Favourite",
+        bg: "linear-gradient(135deg,#7A0F2A 0%,#E8197A 48%,#FFD1E3 100%)",
+        image: "Images/strawberry.png",
+        infoImage: "Images/strawberry-info.jpeg",
+        ingredients: "Wheat flour, sugar, butter, eggs, milk, strawberry yoghurt, condensed milk, icing sugar, strawberry jam, fresh strawberries, lemon juice, baking powder, salt, flavouring, pink food colouring.",
+        allergens: "wheat (gluten), eggs, milk. Prepared in a kitchen that handles other allergens.",
+        layers: ["#B3133A", "#FFF0F6", "#E94D75", "#FFF0F6", "#B3133A", "#FFF0F6"]
+      },
+      {
+        id: "cookies-cream-noir",
+        type: "product",
+        name: "Cookies & Cream Noir Cake Jar",
+        shortName: "Cookies & Cream Noir",
+        subtitle: "Cookies and cream layers",
+        description: "Chocolate sponge layered with cookies and cream filling for a creamy, crunchy and chocolatey dessert jar.",
+        price: 7.28,
+        jarCount: 1,
+        tag: "Cookie Lover",
+        bg: "linear-gradient(135deg,#0F0F0F 0%,#3A2A2A 48%,#E8E1D8 100%)",
+        image: "Images/cookies.png",
+        infoImage: "Images/cookies-info.jpeg",
+        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, butter, whipping cream, icing sugar, cocoa powder, chocolate, baking powder, salt, flavouring, chocolate sandwich cookies (contains wheat, soya).",
+        allergens: "wheat (gluten), eggs, milk, soya. Prepared in a kitchen that handles other allergens.",
+        layers: ["#171717", "#F7F2EC", "#2D211D", "#F7F2EC", "#171717", "#F7F2EC"]
+      }
+    ];
+
+    // const bundles = [
+    //   { id: "bundle-duo", type: "bundle", name: "The Duo Bundle", shortName: "The Duo", subtitle: "2 handcrafted jars", description: "Perfect treat for two. Pick any 2 flavours.", price: 14.99, oldPrice: 15.98, saveText: "Save £0.99", perJar: "£7.50 per jar", jarCount: 2, tag: "Bundle Deal", bg: "linear-gradient(135deg,#9B0D12 0%,#D8673B 100%)" },
+    //   { id: "bundle-trio", type: "bundle", name: "The Trio Bundle", shortName: "The Trio", subtitle: "3 handcrafted jars", description: "Most popular gift size. Mix and match flavours.", price: 20.99, oldPrice: 23.97, saveText: "Save £2.98", perJar: "£7.00 per jar", jarCount: 3, tag: "Most Popular", bg: "linear-gradient(135deg,#E8197A 0%,#A60019 100%)", featured: true },
+    //   { id: "bundle-six", type: "bundle", name: "The Six Pack Bundle", shortName: "The Six Pack", subtitle: "6 handcrafted jars", description: "Best value. Ideal for gifting, family treats or events.", price: 38.99, oldPrice: 47.94, saveText: "Save £8.95", perJar: "£6.50 per jar", jarCount: 6, tag: "Best Value", bg: "linear-gradient(135deg,#4B2D0E 0%,#C9A84C 100%)" }
+    // ];
+
+    const bundles = [
+      {
+        id: "bundle-trio",
+        type: "bundle",
+        name: "The Trio Bundle",
+        shortName: "The Trio",
+        subtitle: "3 handcrafted jars",
+        description: "Perfect for gifting or treating yourself. Pick any 3 flavours.",
+        price: 20.37,
+        oldPrice: 21.84,
+        saveText: "Save £1.47",
+        perJar: "£6.79 per jar",
+        jarCount: 3,
+        // tag: "Popular Pick",
+        bg: "linear-gradient(135deg,#E8197A 0%,#A60019 100%)",
+        image: "Images/3-combo.png",
+        featured: true
+      },
+      {
+        id: "bundle-four",
+        type: "bundle",
+        name: "The Four Pack Bundle",
+        shortName: "The Four Pack",
+        subtitle: "4 handcrafted jars",
+        description: "A generous mix-and-match box for sharing, gifting or stocking up.",
+        price: 27.15,
+        oldPrice: 29.12,
+        saveText: "Save £1.97",
+        perJar: "£6.79 per jar",
+        jarCount: 4,
+        // tag: "Great Value",
+        tag: "Popular Pick",
+        bg: "linear-gradient(135deg,#7A0F2A 0%,#D8673B 100%)",
+        image: "Images/4-combo.png"
+      },
+      {
+        id: "bundle-six",
+        type: "bundle",
+        name: "The Six Pack Bundle",
+        shortName: "The Six Pack",
+        subtitle: "6 handcrafted jars",
+        description: "Best value. Ideal for families, gifting, events or dessert tables.",
+        price: 32.45,
+        oldPrice: 36.40,
+        saveText: "Save £3.95",
+        perJar: "£6.49 per jar",
+        jarCount: 6,
+        tag: "Best Value",
+        bg: "linear-gradient(135deg,#4B2D0E 0%,#C9A84C 100%)",
+        image: "Images/6-combo.png",
+        featured: true
+      }
+    ];
+
+    let cart = [];
+    let fulfilmentOption = "pickup";
+
+    function formatMoney(value) { return new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(value); }
+    function getCartCount() { return cart.reduce((sum, item) => sum + item.qty, 0); }
+    function getTotalJars() { return cart.reduce((sum, item) => sum + (item.jarCount || 1) * item.qty, 0); }
+    function getSubtotal() { return cart.reduce((sum, item) => sum + item.qty * item.price, 0); }
+    function getDeliveryFor(option = fulfilmentOption) {
+      const jars = getTotalJars();
+      if (option === "pickup" || jars === 0) return 0;
+      if (option === "second") {
+        if (jars <= 2) return 3.49;
+        if (jars <= 5) return 4.49;
+        return 5.49;
+      }
+      if (option === "first") {
+        if (jars <= 2) return 4.99;
+        if (jars <= 5) return 5.99;
+        return 6.99;
+      }
+      return 0;
+    }
+    function getDelivery() { return getDeliveryFor(fulfilmentOption); }
+    function getTotal() { return getSubtotal() + getDelivery(); }
+    function findItemById(id) { return [...products, ...bundles].find(item => item.id === id); }
+
+    function showLogoFallback(img) {
+      img.style.display = 'none';
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.style.display = 'block';
+    }
+    function showJarFallback(img) {
+      img.style.display = 'none';
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.style.display = 'flex';
+    }
+
+    function createIllustratedJar(product, compact = false) {
+      return `<div class="jar ${compact ? "jar-compact" : ""}"><div class="jar-lid"></div><div class="jar-body">${(product.layers || products[0].layers).map(colour => `<div class="jar-layer" style="background: ${colour}"></div>`).join("")}<div class="jar-shine"></div><div class="jar-label"><strong>LC</strong><span>Cake Jar</span></div></div></div>`;
+    }
+
+    function createJar(product, compact = false) {
+      return `<div class="jar-stage ${compact ? "jar-stage-compact" : ""}" style="background: ${product.bg}"><div class="jar-badge">${product.tag}</div><div class="jar-photo-wrap"><img class="jar-photo" src="${product.image}" alt="${product.name}" onerror="showJarFallback(this)"><div class="jar-fallback">${createIllustratedJar(product, compact)}</div></div></div>`;
+    }
+
+    function createProductSlider(product) {
+      return `
+        <div class="jar-stage product-slider" id="slider-${product.id}" style="background: ${product.bg}">
+          <div class="jar-badge">${product.tag}</div>
+          <div class="slide active" data-slide="front">
+            <div class="jar-photo-wrap"><img class="jar-photo" src="${product.image}" alt="${product.name}" onerror="showJarFallback(this)"><div class="jar-fallback">${createIllustratedJar(product)}</div></div>
+          </div>
+          <div class="slide" data-slide="info">
+            <img class="jar-photo" src="${product.infoImage}" alt="${product.shortName} ingredients and allergy information" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="info-slide-card" style="display:none;"><h4>${product.shortName}</h4><p><strong>Ingredients:</strong> ${product.ingredients}</p><p><strong>Allergy information:</strong> ${product.allergens}</p></div>
+          </div>
+          <button class="slider-arrow slider-arrow-right" type="button" aria-label="View ingredients and allergy information" data-slider-arrow="right" onclick="setProductSlide('${product.id}', 'info')">›</button>
+          <button class="slider-arrow slider-arrow-left" type="button" aria-label="Back to product photo" data-slider-arrow="left" onclick="setProductSlide('${product.id}', 'front')" style="display: none;">‹</button>
+        </div>`;
+    }
+
+    function setProductSlide(productId, slideName) {
+      const slider = document.getElementById(`slider-${productId}`);
+      if (!slider) return;
+
+      slider.querySelectorAll(".slide").forEach(slide => {
+        slide.classList.toggle("active", slide.dataset.slide === slideName);
+      });
+
+      const rightArrow = slider.querySelector('[data-slider-arrow="right"]');
+      const leftArrow = slider.querySelector('[data-slider-arrow="left"]');
+
+      if (rightArrow) rightArrow.style.display = slideName === "front" ? "grid" : "none";
+      if (leftArrow) leftArrow.style.display = slideName === "info" ? "grid" : "none";
+    }
+
+    // function createBundleJars(bundle) {
+    //   const count = Math.min(bundle.jarCount, 3);
+    //   const jarColours = [products[0].layers, products[1].layers, products[2].layers];
+    //   return `<div class="bundle-jars">${Array.from({ length: count }).map((_, index) => `<div class="mini-jar">${jarColours[index % jarColours.length].map(colour => `<div style="background:${colour}"></div>`).join("")}</div>`).join("")}${bundle.jarCount > 3 ? `<div style="color:white;font-size:22px;font-weight:900;background:rgba(255,255,255,.18);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;z-index:2;">+${bundle.jarCount - 3}</div>` : ""}</div>`;
+    // }
+  
+     function createBundleImage(bundle) {
+  if (bundle.image) {
+    return `
+      <div class="bundle-image-wrap">
+        <img 
+          class="bundle-image" 
+          src="${bundle.image}" 
+          alt="${bundle.name}" 
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <div class="bundle-image-fallback">
+          ${createBundleJarsFallback(bundle)}
+        </div>
+      </div>
+    `;
+  }
+
+  return createBundleJarsFallback(bundle);
+}
+
+function createBundleJarsFallback(bundle) {
+  const count = Math.min(bundle.jarCount, 3);
+  const jarColours = [products[0].layers, products[1].layers, products[2].layers];
+
+  return `
+    <div class="bundle-jars">
+      ${Array.from({ length: count }).map((_, index) => `
+        <div class="mini-jar">
+          ${jarColours[index % jarColours.length].map(colour => `<div style="background:${colour}"></div>`).join("")}
+        </div>
+      `).join("")}
+      ${bundle.jarCount > 3 ? `
+        <div style="color:white;font-size:22px;font-weight:900;background:rgba(255,255,255,.18);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;z-index:2;">
+          +${bundle.jarCount - 3}
+        </div>
+      ` : ""}
+    </div>
+  `;
+}  
+
+    function renderProducts() {
+      const grid = document.getElementById("product-grid");
+      grid.innerHTML = products.map(product => {
+        const cartItem = cart.find(item => item.id === product.id);
+        return `<article class="product-card">${createProductSlider(product)}<div class="product-body"><div class="product-meta"><span class="tag">${product.tag}</span><span class="stars">★★★★★</span></div><h3>${product.shortName}</h3><p class="subtitle">${product.subtitle}</p><p class="desc">${product.description}</p><div class="product-bottom"><div class="price"><small>From</small><strong>${formatMoney(product.price)}</strong></div>${cartItem ? `<div class="qty-control"><button type="button" onclick="removeOne('${product.id}')">−</button><strong>${cartItem.qty}</strong><button type="button" onclick="addToCart('${product.id}')">+</button></div>` : `<button class="btn btn-primary" onclick="addToCart('${product.id}')">+ Add</button>`}</div></div></article>`;
+      }).join("");
+    }
+
+    function renderBundles() {
+      const grid = document.getElementById("bundle-grid");
+      if (!grid) return;
+
+      grid.innerHTML = bundles.map(bundle => {
+        const cartItem = cart.find(item => item.id === bundle.id);
+        return `
+          <article class="bundle-card ${bundle.featured ? "featured" : ""}">
+            ${bundle.featured ? `<div class="popular-ribbon">🔥 ${bundle.tag || "Most Popular"}</div>` : ""}
+            <div class="bundle-header" style="background:${bundle.bg}">
+              <div class="bundle-title-block">
+                <h3>${bundle.shortName}</h3>
+                <span>${bundle.subtitle}</span>
+              </div>
+              ${createBundleImage(bundle)}
+            </div>
+            <div class="bundle-card-body">
+              <p>${bundle.description}</p>
+              <div class="save-pill">🎉 ${bundle.saveText}</div>
+              <div class="bundle-price-row">
+                <div>
+                  <span class="bundle-price">${formatMoney(bundle.price)}</span>
+                  <span class="bundle-old-price">${formatMoney(bundle.oldPrice)}</span>
+                  <span class="per-jar">${bundle.perJar}</span>
+                </div>
+                ${
+                  cartItem
+                    ? `<div class="qty-control"><button type="button" onclick="removeOne('${bundle.id}')">−</button><strong>${cartItem.qty}</strong><button type="button" onclick="addToCart('${bundle.id}')">+</button></div>`
+                    : `<button class="btn btn-dark" onclick="addToCart('${bundle.id}')">Select →</button>`
+                }
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+    function renderHeroJar() { document.getElementById("hero-jar").innerHTML = createJar(products[0]); }
+    function updateCartBadges() {
+      const count = getCartCount();
+      document.querySelectorAll("[data-cart-count]").forEach(el => { el.textContent = count; el.classList.toggle("show", count > 0); });
+      document.querySelectorAll("[data-cart-count-inline]").forEach(el => { el.textContent = count; });
+    }
+    function addToCart(itemId) {
+      const item = findItemById(itemId);
+      if (!item) return;
+      const existing = cart.find(cartItem => cartItem.id === itemId);
+      if (existing) existing.qty += 1; else cart.push({ ...item, qty: 1 });
+      refresh();
+    }
+    function removeOne(itemId) {
+      const existing = cart.find(item => item.id === itemId);
+      if (!existing) return;
+      if (existing.qty <= 1) cart = cart.filter(item => item.id !== itemId); else existing.qty -= 1;
+      refresh();
+    }
+    function removeAll(itemId) { cart = cart.filter(item => item.id !== itemId); refresh(); }
+    function refresh() { renderProducts(); renderBundles(); renderCart(); updateCartBadges(); }
+
+    function renderCart() {
+      const container = document.getElementById("cart-content");
+      const totalJars = getTotalJars();
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="empty-cart"><div class="empty-icon">🛒</div><h3>Your cart is empty</h3><p style="color: var(--muted);">Add at least 2 jars to get started.</p><button class="btn btn-primary" onclick="closeModal('cart-modal')">Continue shopping</button></div>`;
+        return;
+      }
+      container.innerHTML = `<div class="cart-items">${cart.map(item => `<div class="cart-item">${item.type === "bundle" ? `<div class="jar-stage jar-stage-compact" style="background:${item.bg}">${createBundleJarsFallback(item)}</div>` : createJar(item, true)}<div style="flex: 1;"><div class="cart-line-top"><div><strong>${item.shortName}</strong><span>${item.type === "bundle" ? `${item.jarCount} jars per bundle` : `${formatMoney(item.price)} each`}</span></div><button class="remove-btn" onclick="removeAll('${item.id}')">×</button></div><div class="cart-line-bottom"><div class="qty-control"><button type="button" onclick="removeOne('${item.id}')">−</button><strong>${item.qty}</strong><button type="button" onclick="addToCart('${item.id}')">+</button></div><strong>${formatMoney(item.price * item.qty)}</strong></div></div></div>`).join("")}</div>${totalJars < 2 ? `<div class="min-order-warning">Minimum order is 2 jars. Please add one more jar or choose a bundle before checkout.</div>` : ""}<div class="summary"><div class="summary-row"><span>Total jars</span><strong>${totalJars}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>Delivery</span><strong>Choose at checkout</strong></div><div class="summary-total"><span>Total before delivery</span><span>${formatMoney(getSubtotal())}</span></div></div><button class="btn btn-primary" style="width: 100%; margin-top: 18px;" onclick="startCheckout()" ${totalJars < 2 ? "disabled" : ""}>💳 Checkout securely</button>`;
+    }
+
+    function renderFulfilmentOptions() {
+      const jars = getTotalJars();
+      return `<div class="checkout-option-grid"><label class="fulfilment-option"><div><strong>Pickup</strong><small>Collect from Leemah Cakes n More. No delivery fee.</small></div><div><strong>${formatMoney(0)}</strong><input type="radio" name="fulfilment" value="pickup" ${fulfilmentOption === "pickup" ? "checked" : ""} onchange="setFulfilmentOption('pickup')"></div></label><label class="fulfilment-option"><div><strong>2nd Class delivery</strong><small>Delivery fee based on ${jars} jar${jars === 1 ? "" : "s"}.</small></div><div><strong>${formatMoney(getDeliveryFor("second"))}</strong><input type="radio" name="fulfilment" value="second" ${fulfilmentOption === "second" ? "checked" : ""} onchange="setFulfilmentOption('second')"></div></label><label class="fulfilment-option"><div><strong>1st Class delivery</strong><small>Faster delivery fee based on ${jars} jar${jars === 1 ? "" : "s"}.</small></div><div><strong>${formatMoney(getDeliveryFor("first"))}</strong><input type="radio" name="fulfilment" value="first" ${fulfilmentOption === "first" ? "checked" : ""} onchange="setFulfilmentOption('first')"></div></label></div>`;
+    }
+    function setFulfilmentOption(option) { fulfilmentOption = option; renderCheckout(false); }
+
+    function renderDeliveryAddressFields() {
+      if (fulfilmentOption === "pickup") {
+        return `
+          <div class="payment-box">
+            <strong>Pickup details</strong>
+            <p style="color: var(--muted); font-size: 13px; line-height: 1.6; margin: 8px 0 0;">
+              No postcode or delivery address is needed for collection. We will contact you after payment with the pickup address and collection instructions.
+            </p>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="two-col" style="margin-top: 14px;">
+          <label class="field"><span>Postcode</span><input name="postcode" required placeholder="CM1..." /></label>
+          <label class="field"><span>Delivery town/city</span><input name="city" required placeholder="Chelmsford" /></label>
+        </div>
+        <div style="margin-top: 14px;">
+          <label class="field"><span>Delivery address</span><input name="address" required placeholder="House number and street" /></label>
+        </div>
+      `;
+    }
+
+    function renderCheckout(success = false) {
+      const container = document.getElementById("checkout-content");
+      if (success) {
+        container.innerHTML = `<div class="success"><div class="success-icon">🎉</div><h2>Order received</h2><p style="color: var(--muted); line-height: 1.7;">Thank you. A real live version would now send the customer confirmation email and send you the order details.</p><button class="btn btn-primary" onclick="finishOrder()">Continue shopping</button></div>`;
+        return;
+      }
+
+      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, 1st Class delivery or 2nd Class delivery. Delivery fee updates based on the number of jars in your order.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}<p style="color: var(--muted); font-size: 12px; line-height: 1.6; margin: 8px 0 0;">Estimated parcel weight: ${getCartWeightKg()}kg. Delivery is added separately so discounts do not reduce the postage fee.</p></div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Your order will be ready for pickup or shipped within 48 hours. Cancellations made after 6 hours may not be refundable, as each jar is prepared fresh to order.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe secure checkout when you place the order.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Netlify Functions will create the Stripe checkout session securely using your Stripe secret key.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "1st Class delivery" : "2nd Class delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
+      document.getElementById("checkout-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const formData = new FormData(form);
+        const orderDetails = {
+          customer: {
+            name: formData.get("name") || "",
+            email: formData.get("email") || "",
+            phone: formData.get("phone") || "",
+            postcode: fulfilmentOption === "pickup" ? "" : (formData.get("postcode") || ""),
+            city: fulfilmentOption === "pickup" ? "" : (formData.get("city") || ""),
+            address: fulfilmentOption === "pickup" ? "" : (formData.get("address") || "")
+          },
+          orderNote: formData.get("orderNote") || "",
+          couponCode: formData.get("couponCode") || ""
+        };
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = "Taking you to secure payment...";
+        }
+
+        try {
+          await submitStripeCheckout(orderDetails);
+        } catch (error) {
+          alert(error.message || "Something went wrong. Please try again.");
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Place order";
+          }
+        }
+      });
+    }
+
+    function getCartWeightKg() {
+      const jars = getTotalJars();
+      if (jars <= 0) return 0;
+      if (jars <= 2) return 0.7;
+      if (jars === 3) return 1.05;
+      if (jars === 4) return 1.4;
+      if (jars <= 6) return 2.1;
+      return Math.ceil(jars / 2) * 0.7;
+    }
+
+    function getStripeLineItems() {
+      return cart.map(item => ({
+        id: item.id,
+        name: item.shortName,
+        quantity: item.qty,
+        jarCount: item.jarCount || 1,
+        unitAmount: Math.round(item.price * 100)
+      }));
+    }
+
+    async function submitStripeCheckout(orderDetails) {
+      const payload = {
+        items: getStripeLineItems(),
+        totalJars: getTotalJars(),
+        estimatedWeightKg: getCartWeightKg(),
+        fulfilmentOption,
+        deliveryAmount: Math.round(getDelivery() * 100),
+        subtotalAmount: Math.round(getSubtotal() * 100),
+        couponCode: orderDetails.couponCode || "",
+        customer: orderDetails.customer,
+        orderNote: orderDetails.orderNote
+      };
+
+      const response = await fetch("/.netlify/functions/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        let errorMessage = "Checkout could not be created. Please try again or contact us on WhatsApp.";
+        try {
+          const errorData = await response.json();
+          if (errorData && errorData.error) errorMessage = errorData.error;
+        } catch (error) {}
+        throw new Error(errorMessage);
+      }
+
+      const session = await response.json();
+      if (session.url) {
+        window.location.href = session.url;
+        return;
+      }
+
+      throw new Error("Stripe did not return a checkout URL.");
+    }
+
+    function startCheckout() {
+      if (getTotalJars() < 2) { alert("Minimum order is 2 jars. Please add one more jar or select a bundle."); return; }
+      closeModal("cart-modal"); renderCheckout(); openModal("checkout-modal");
+    }
+    function finishOrder() { cart = []; fulfilmentOption = "pickup"; refresh(); closeModal("checkout-modal"); }
+    function openModal(id) { document.getElementById(id).classList.add("show"); document.body.style.overflow = "hidden"; }
+    function closeModal(id) { document.getElementById(id).classList.remove("show"); document.body.style.overflow = ""; }
+    function openMobileMenu() { document.querySelector("[data-mobile-menu]").classList.add("show"); document.body.style.overflow = "hidden"; }
+    function closeMobileMenu() { document.querySelector("[data-mobile-menu]").classList.remove("show"); document.body.style.overflow = ""; }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      renderHeroJar(); renderProducts(); renderBundles(); renderCart(); updateCartBadges();
+      document.querySelectorAll("[data-open-cart]").forEach(button => button.addEventListener("click", () => openModal("cart-modal")));
+      document.querySelectorAll("[data-open-custom]").forEach(button => button.addEventListener("click", () => openModal("custom-modal")));
+      const openMenuBtn = document.querySelector("[data-open-menu]"); const closeMenuBtn = document.querySelector("[data-close-menu]");
+      if (openMenuBtn) openMenuBtn.addEventListener("click", openMobileMenu); if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
+      document.querySelectorAll("[data-mobile-link]").forEach(link => link.addEventListener("click", closeMobileMenu));
+      const mobileMenu = document.querySelector("[data-mobile-menu]"); if (mobileMenu) mobileMenu.addEventListener("click", function(event) { if (event.target === this) closeMobileMenu(); });
+      document.querySelectorAll("[data-close-modal]").forEach(button => button.addEventListener("click", function() { closeModal(this.closest(".modal-backdrop").id); }));
+      document.querySelectorAll(".modal-backdrop").forEach(backdrop => backdrop.addEventListener("click", function(event) { if (event.target === this) closeModal(this.id); }));
+      document.querySelectorAll("[data-notify-form]").forEach(form => {
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          alert("Thank you. We’ll let you know when this launches.");
+          form.reset();
+        });
+      });
+    });
+
+    /* ══ GOOGLE SHEETS REVIEW SYSTEM JS ══ */
+    
+
+    const GOOGLE_REVIEW_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxYqY8BxGvSFiy2aFMzDnpZnvYNBa67Pshdg4V5yJtDnu5qp5a49Z_WJAqtbDn9YrwA/exec";
+    let selectedRating = 0;
+
+    function isGoogleReviewReady() {
+  return GOOGLE_REVIEW_SCRIPT_URL && !GOOGLE_REVIEW_SCRIPT_URL.includes("PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE");
+}
+
+    function renderReviewCard(review) {
+      const name = esc(review.Name || review.name || "");
+      const flavour = esc(review.Flavour || review.flavour || "Verified customer");
+      const text = esc(review.Review || review.review || "");
+      const rating = parseInt(review.Rating || review.rating || 5, 10);
+      const safeRating = Math.max(1, Math.min(5, isNaN(rating) ? 5 : rating));
+      const stars = "★".repeat(safeRating) + "☆".repeat(5 - safeRating);
+      const initial = name ? name.charAt(0).toUpperCase() : "?";
+
+      return `
+        <div class="review-card">
+          <div class="stars">${stars}</div>
+          <blockquote>“${text}”</blockquote>
+          <div class="review-author">
+            <div class="avatar">${initial}</div>
+            <div>
+              <strong>${name || "Customer"}</strong>
+              <span>${flavour} · Verified customer</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    async function loadApprovedReviewsFromGoogleSheet() {
+      const grid = document.getElementById("reviews-grid");
+      if (!grid || !isGoogleReviewReady()) return;
+
+      try {
+        const response = await fetch(`${GOOGLE_REVIEW_SCRIPT_URL}?action=getApprovedReviews&cache=${Date.now()}`);
+        const data = await response.json();
+        const reviews = Array.isArray(data.reviews) ? data.reviews : [];
+
+        if (!reviews.length) return;
+
+        const approvedHtml = reviews
+          .filter(review => String(review.Status || review.status || "").toLowerCase() === "approved")
+          .map(renderReviewCard)
+          .join("");
+
+        if (approvedHtml) {
+          grid.insertAdjacentHTML("beforeend", approvedHtml);
+        }
+      } catch (error) {
+        console.warn("Approved reviews could not be loaded from Google Sheets.", error);
+      }
+    }
+
+    // Star picker
+    (function setupStars() {
+      var stars = document.querySelectorAll("#star-picker label");
+      if (!stars.length) return;
+
+      stars.forEach(function(star) {
+        star.addEventListener("click", function() {
+          selectedRating = parseInt(this.getAttribute("data-val"));
+          document.getElementById("review-rating").value = selectedRating;
+          stars.forEach(function(s, i) {
+            s.classList.toggle("lit", i < selectedRating);
+            s.style.color = i < selectedRating ? "var(--gold)" : "#DDD";
+          });
+        });
+
+        star.addEventListener("mouseover", function() {
+          var val = parseInt(this.getAttribute("data-val"));
+          stars.forEach(function(s, i) {
+            s.style.color = i < val ? "var(--gold)" : "#DDD";
+          });
+        });
+
+        star.addEventListener("mouseout", function() {
+          stars.forEach(function(s, i) {
+            s.style.color = i < selectedRating ? "var(--gold)" : "#DDD";
+          });
+        });
+      });
+    })();
+
+    // Submit review to Google Sheets as Pending
+    var reviewForm = document.getElementById("review-form");
+    if (reviewForm) {
+      reviewForm.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        if (!isGoogleReviewReady()) {
+          alert("Google Sheets review link has not been added yet. Please add your Apps Script Web App URL in the HTML file.");
+          return;
+        }
+
+        var rating = parseInt(document.getElementById("review-rating").value || "0");
+        var name = document.getElementById("review-name").value.trim();
+        var flavour = document.getElementById("review-flavour").value;
+        var text = document.getElementById("review-text").value.trim();
+
+        if (rating === 0) { alert("Please select a star rating before submitting."); return; }
+        if (!name) { alert("Please enter your name before submitting."); return; }
+        if (!flavour) { alert("Please select the flavour you ordered."); return; }
+        if (!text) { alert("Please write your review before submitting."); return; }
+
+        var submitBtn = reviewForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting review...";
+        }
+
+        const reviewPayload = {
+          action: "submitReview",
+          Date: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }),
+          Name: name,
+          Flavour: flavour,
+          Rating: rating,
+          Review: text,
+          Status: "Pending"
+        };
+
+        try {
+          await fetch(GOOGLE_REVIEW_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(reviewPayload)
+          });
+
+          reviewForm.reset();
+          selectedRating = 0;
+          document.getElementById("review-rating").value = "0";
+          document.querySelectorAll("#star-picker label").forEach(function(s) {
+            s.classList.remove("lit");
+            s.style.color = "#DDD";
+          });
+
+          reviewForm.style.display = "none";
+          var msg = document.getElementById("review-submitted-msg");
+          if (msg) msg.classList.add("show");
+        } catch (error) {
+          alert("Your review could not be submitted. Please try again or message us on WhatsApp.");
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit";
+          }
+        }
+      });
+    }
+
+    function esc(str) {
+      return String(str || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+    }
+
+    loadApprovedReviewsFromGoogleSheet();
+    /* ══ END GOOGLE SHEETS REVIEW SYSTEM JS ══ */
+
+  </script>
+
+
+
+
+
+  <!--
+    STRIPE + NETLIFY SETUP DIRECTION
+    1. The checkout function is in: netlify/functions/create-checkout.js
+    2. Add your Stripe secret key in Netlify: Site settings > Environment variables > STRIPE_SECRET_KEY
+    3. Optional coupons can be added in Netlify as STRIPE_COUPONS_JSON.
+       Example: {"LAUNCH10":{"percent_off":10},"SAVE5":{"amount_off":500}}
+       amount_off is in pence, so 500 means £5.00.
+    4. Delivery is sent as a separate line item, and coupon discounts are calculated from product subtotal only.
+    5. Turn on Stripe customer receipt emails in Stripe Dashboard > Settings > Customer emails.
+
+    Weight logic used by the website:
+    2 jars = 700g
+    3 jars = 1.05kg
+    4 jars = 1.4kg
+    6 jars = 2.1kg
+  -->
+
+</body>
+</html>
