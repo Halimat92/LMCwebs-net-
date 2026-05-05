@@ -209,7 +209,6 @@ exports.handler = async function (event) {
 
     const sessionParams = {
       mode: "payment",
-      payment_method_types: ["card"],
       line_items: lineItems,
       customer_email: customerEmail,
       client_reference_id: `${Date.now()}-${customerEmail}`,
