@@ -1558,25 +1558,72 @@
     .review-author strong { display: block; }
     .review-author span { color: var(--muted); font-size: 12px; }
 
-    .review-flavour-options {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+    .review-flavour-dropdown {
+      position: relative;
       margin-top: 8px;
+    }
+
+    .review-flavour-toggle {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 18px;
+      padding: 14px 15px;
+      font: inherit;
+      color: #2B2528;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .review-flavour-toggle::after {
+      content: "⌄";
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .review-flavour-dropdown.open .review-flavour-toggle {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(232,25,122,.1);
+    }
+
+    .review-flavour-options {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.12);
+    }
+
+    .review-flavour-dropdown.open .review-flavour-options {
+      display: grid;
+      gap: 6px;
     }
 
     .review-flavour-option {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: flex-start;
+      gap: 10px;
       background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 11px 12px;
+      border-radius: 12px;
+      padding: 10px 8px;
       font-size: 13px;
       font-weight: 700;
       color: #2B2528;
       cursor: pointer;
+    }
+
+    .review-flavour-option:hover {
+      background: var(--blush);
     }
 
     .review-flavour-option input {
@@ -2440,7 +2487,7 @@
 
       <section class="trust">
         <div class="trust-grid">
-          <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Delivery</strong><span>Pickup, 1st or 2nd Class</span></div></div>
+          <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Delivery</strong><span>Pickup, Standard or Special Delivery</span></div></div>
           <div class="trust-item"><div class="trust-icon">✅</div><div><strong>Food Safety</strong><span>Allergen note included</span></div></div>
           <div class="trust-item"><div class="trust-icon">🎁</div><div><strong>Gift Ready</strong><span>Perfect for surprises</span></div></div>
           <div class="trust-item"><div class="trust-icon">2️⃣</div><div><strong>Minimum Order</strong><span>Starts from 2 jars</span></div></div>
@@ -2500,7 +2547,7 @@
               </div>
               <div class="coming-soon-card-body">
                 <p>Our signature flavours in a generous slice. Rich, layered and ready to enjoy. Perfect for birthdays, celebrations and gifting.</p>
-                <form class="notify-form" name="coming-soon-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form class="notify-form" name="coming-soon-notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="coming-soon-notify">
                   <input type="hidden" name="interest" value="Cake Slices">
                   <p style="display:none;"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
@@ -2518,7 +2565,7 @@
               </div>
               <div class="coming-soon-card-body">
                 <p>Beautifully rustic mini naked cakes for events, weddings, birthdays and sweet tables. Customisable flavours and decorations available.</p>
-                <form class="notify-form" name="coming-soon-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form class="notify-form" name="coming-soon-notify" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="coming-soon-notify">
                   <input type="hidden" name="interest" value="Mini Naked Cakes">
                   <p style="display:none;"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
@@ -2538,7 +2585,7 @@
             <div class="baker-fallback" style="display:none;">👩🏽‍🍳</div>
           </div>
           <div class="about-baker-content">
-            <p class="section-kicker">The baker behind the jars</p>
+            <p class="section-kicker">The baker behind your cakes</p>
             <h2>Hi, I’m <span>Leemah</span></h2>
             <p>I’m a Chelmsford-based baker with a deep love for creating desserts that bring joy to people. What started as a passion for baking for family and friends has grown into Leemah Cakes n More.</p>
             <p>Every jar is made fresh by hand with real ingredients and a lot of love. I believe that everyone deserves a little indulgence, and I want every bite to feel like a special moment.</p>
@@ -2553,14 +2600,14 @@
             <div class="delivery-info-icon">📦</div>
             <div>
               <h3>Standard Delivery</h3>
-              <p>2nd Class Royal Mail. Delivery price is calculated by order weight at checkout.</p>
+              <p>Delivery takes 1-3 working days.</p>
             </div>
           </article>
           <article class="delivery-info-card">
             <div class="delivery-info-icon">⚡</div>
             <div>
-              <h3>Express Delivery</h3>
-              <p>1st Class Royal Mail. Delivery price is calculated by order weight at checkout.</p>
+              <h3>Special Delivery</h3>
+              <p>Delivery is guaranteed the next day.</p>
             </div>
           </article>
           <article class="delivery-info-card">
@@ -2622,7 +2669,7 @@
             <div class="steps">
               <div class="step"><div class="step-num">1</div><div><h3>Choose your flavour or bundle</h3><p>Select your favourite jar or choose a 3, 4 or 6 jar bundle.</p></div></div>
               <div class="step"><div class="step-num">2</div><div><h3>Add to cart</h3><p>Minimum order is 2 jars. Review your quantity before checkout.</p></div></div>
-              <div class="step"><div class="step-num">3</div><div><h3>Select delivery</h3><p>Choose pickup, 1st Class delivery or 2nd Class delivery. Delivery price updates based on the number of jars.</p></div></div>
+              <div class="step"><div class="step-num">3</div><div><h3>Select delivery</h3><p>Choose pickup, Standard Delivery or Special Delivery.</p></div></div>
               <div class="step"><div class="step-num">4</div><div><h3>Enjoy or gift</h3><p>Perfect for yourself, loved ones, events or a small luxury treat.</p></div></div>
             </div>
           </div>
@@ -2658,14 +2705,17 @@
               <label class="field"><span>Your name *</span><input id="review-name" required placeholder="e.g. Sarah M." /></label>
               <div class="field">
                 <span>Flavours you ordered *</span>
-                <div class="review-flavour-options" id="review-flavour-options">
-                  <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Rouge Velvet"> Rouge Velvet</label>
-                  <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Ivory Dream"> Ivory Dream</label>
-                  <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Caramel Noir"> Caramel Noir</label>
-                  <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Strawberry Bliss"> Strawberry Bliss</label>
-                  <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Cookies & Cream Noir"> Cookies &amp; Cream Noir</label>
+                <div class="review-flavour-dropdown" id="review-flavour-dropdown">
+                  <button class="review-flavour-toggle" id="review-flavour-toggle" type="button">Select flavour(s)</button>
+                  <div class="review-flavour-options" id="review-flavour-options">
+                    <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Rouge Velvet"> Rouge Velvet</label>
+                    <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Ivory Dream"> Ivory Dream</label>
+                    <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Caramel Noir"> Caramel Noir</label>
+                    <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Strawberry Bliss"> Strawberry Bliss</label>
+                    <label class="review-flavour-option"><input type="checkbox" name="review-flavour" value="Cookies & Cream Noir"> Cookies &amp; Cream Noir</label>
+                  </div>
                 </div>
-                <small class="review-flavour-hint">Tick all flavours you ordered. Minimum order is 2 jars, but they can be the same flavour.</small>
+                <small class="review-flavour-hint">Tick all flavour(s) that apply.</small>
               </div>
             </div>
             <label class="field" style="margin-bottom:20px">
@@ -2907,7 +2957,7 @@
         delivery: `
           <div class="help-chatbot-response">
             <strong>Delivery and pickup</strong><br>
-            At checkout, you can choose pickup, 1st Class delivery or 2nd Class delivery. Delivery fee is calculated based on the number of jars in your order. Orders are ready for pickup or shipped within 24-48 hours. Each order is freshly made to order, so cancellations requested more than 6 hours after placing an order are non-refundable.
+            At checkout, you can choose pickup, Standard Delivery or Special Delivery. Standard Delivery takes 1-3 working days. Special Delivery is guaranteed the next day. Each order is freshly made to order, so cancellations requested more than 6 hours after placing an order are non-refundable.
             <div class="help-chatbot-actions">
               <a class="help-chatbot-link" href="#how-it-works" onclick="closeHelpChatbot()">How it works</a>
             </div>
@@ -3096,16 +3146,9 @@
     function getDeliveryFor(option = fulfilmentOption) {
       const jars = getTotalJars();
       if (option === "pickup" || jars === 0) return 0;
-      if (option === "second") {
-        if (jars <= 2) return 3.49;
-        if (jars <= 5) return 4.49;
-        return 5.49;
-      }
-      if (option === "first") {
-        if (jars <= 2) return 4.99;
-        if (jars <= 5) return 5.99;
-        return 6.99;
-      }
+
+      if (option === "second") return 4.99;
+      if (option === "first") return 11.99;
       return 0;
     }
     function getDelivery() { return getDeliveryFor(fulfilmentOption); }
@@ -3286,7 +3329,7 @@ function createBundleJarsFallback(bundle) {
 
     function renderFulfilmentOptions() {
       const jars = getTotalJars();
-      return `<div class="checkout-option-grid"><label class="fulfilment-option"><div><strong>Pickup</strong><small>Collect from Leemah Cakes n More. No delivery fee.</small></div><div><strong>${formatMoney(0)}</strong><input type="radio" name="fulfilment" value="pickup" ${fulfilmentOption === "pickup" ? "checked" : ""} onchange="setFulfilmentOption('pickup')"></div></label><label class="fulfilment-option"><div><strong>2nd Class delivery</strong><small>Delivery fee based on ${jars} jar${jars === 1 ? "" : "s"}.</small></div><div><strong>${formatMoney(getDeliveryFor("second"))}</strong><input type="radio" name="fulfilment" value="second" ${fulfilmentOption === "second" ? "checked" : ""} onchange="setFulfilmentOption('second')"></div></label><label class="fulfilment-option"><div><strong>1st Class delivery</strong><small>Faster delivery fee based on ${jars} jar${jars === 1 ? "" : "s"}.</small></div><div><strong>${formatMoney(getDeliveryFor("first"))}</strong><input type="radio" name="fulfilment" value="first" ${fulfilmentOption === "first" ? "checked" : ""} onchange="setFulfilmentOption('first')"></div></label></div>`;
+      return `<div class="checkout-option-grid"><label class="fulfilment-option"><div><strong>Pickup</strong><small>Collect from Leemah Cakes n More. No delivery fee.</small></div><div><strong>${formatMoney(0)}</strong><input type="radio" name="fulfilment" value="pickup" ${fulfilmentOption === "pickup" ? "checked" : ""} onchange="setFulfilmentOption('pickup')"></div></label><label class="fulfilment-option"><div><strong>Standard Delivery</strong><small>Delivery takes 1-3 working days.</small></div><div><strong>${formatMoney(getDeliveryFor("second"))}</strong><input type="radio" name="fulfilment" value="second" ${fulfilmentOption === "second" ? "checked" : ""} onchange="setFulfilmentOption('second')"></div></label><label class="fulfilment-option"><div><strong>Special Delivery</strong><small>Delivery is guaranteed the next day.</small></div><div><strong>${formatMoney(getDeliveryFor("first"))}</strong><input type="radio" name="fulfilment" value="first" ${fulfilmentOption === "first" ? "checked" : ""} onchange="setFulfilmentOption('first')"></div></label></div>`;
     }
     function setFulfilmentOption(option) { fulfilmentOption = option; renderCheckout(false); }
 
@@ -3320,7 +3363,7 @@ function createBundleJarsFallback(bundle) {
         return;
       }
 
-      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, 1st Class delivery or 2nd Class delivery. Delivery fee updates based on the number of jars in your order.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}<p style="color: var(--muted); font-size: 12px; line-height: 1.6; margin: 8px 0 0;">Estimated parcel weight: ${getCartWeightKg()}kg. Delivery is added separately so discounts do not reduce the postage fee.</p></div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe secure checkout when you place the order.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "1st Class delivery" : "2nd Class delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
+      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, Standard Delivery or Special Delivery.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}<p style="color: var(--muted); font-size: 12px; line-height: 1.6; margin: 8px 0 0;">Delivery is added separately so discounts do not reduce the postage fee.</p></div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe secure checkout when you place the order.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "Special Delivery" : "Standard Delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
       document.getElementById("checkout-form").addEventListener("submit", async function(event) {
         event.preventDefault();
         const form = event.target;
@@ -3422,6 +3465,13 @@ function createBundleJarsFallback(bundle) {
     function closeModal(id) { document.getElementById(id).classList.remove("show"); document.body.style.overflow = ""; }
     function openMobileMenu() { document.querySelector("[data-mobile-menu]").classList.add("show"); document.body.style.overflow = "hidden"; }
     function closeMobileMenu() { document.querySelector("[data-mobile-menu]").classList.remove("show"); document.body.style.overflow = ""; }
+    function updateReviewFlavourToggle() {
+      const toggle = document.getElementById("review-flavour-toggle");
+      if (!toggle) return;
+
+      const selectedFlavours = Array.from(document.querySelectorAll('input[name="review-flavour"]:checked')).map(input => input.value);
+      toggle.textContent = selectedFlavours.length ? selectedFlavours.join(", ") : "Select flavour(s)";
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
       renderHeroJar(); renderProducts(); renderBundles(); renderCart(); updateCartBadges();
@@ -3433,6 +3483,17 @@ function createBundleJarsFallback(bundle) {
       const mobileMenu = document.querySelector("[data-mobile-menu]"); if (mobileMenu) mobileMenu.addEventListener("click", function(event) { if (event.target === this) closeMobileMenu(); });
       document.querySelectorAll("[data-close-modal]").forEach(button => button.addEventListener("click", function() { closeModal(this.closest(".modal-backdrop").id); }));
       document.querySelectorAll(".modal-backdrop").forEach(backdrop => backdrop.addEventListener("click", function(event) { if (event.target === this) closeModal(this.id); }));
+      const reviewFlavourDropdown = document.getElementById("review-flavour-dropdown");
+      const reviewFlavourToggle = document.getElementById("review-flavour-toggle");
+      if (reviewFlavourToggle && reviewFlavourDropdown) {
+        reviewFlavourToggle.addEventListener("click", function() {
+          reviewFlavourDropdown.classList.toggle("open");
+        });
+        document.querySelectorAll('input[name="review-flavour"]').forEach(input => input.addEventListener("change", updateReviewFlavourToggle));
+        document.addEventListener("click", function(event) {
+          if (!reviewFlavourDropdown.contains(event.target)) reviewFlavourDropdown.classList.remove("open");
+        });
+      }
     });
 
     /* ══ GOOGLE SHEETS REVIEW SYSTEM JS ══ */
@@ -3598,6 +3659,7 @@ function createBundleJarsFallback(bundle) {
           reviewForm.reset();
           selectedRating = 0;
           document.getElementById("review-rating").value = "0";
+          updateReviewFlavourToggle();
           document.querySelectorAll("#star-picker label").forEach(function(s) {
             s.classList.remove("lit");
             s.style.color = "#DDD";

@@ -18,8 +18,8 @@ const CATALOGUE = {
 
 const DELIVERY_LABELS = {
   pickup: "Pickup",
-  second: "2nd Class delivery",
-  first: "1st Class delivery"
+  second: "Standard Delivery",
+  first: "Special Delivery"
 };
 
 const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. We will notify you once your order is ready for pickup and share the pickup details/address with you. As every jar is made to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
@@ -56,19 +56,8 @@ function normaliseCouponCode(code) {
 
 function getDeliveryAmount(fulfilmentOption, totalJars) {
   if (fulfilmentOption === "pickup" || totalJars <= 0) return 0;
-
-  if (fulfilmentOption === "second") {
-    if (totalJars <= 2) return 349;
-    if (totalJars <= 5) return 449;
-    return 549;
-  }
-
-  if (fulfilmentOption === "first") {
-    if (totalJars <= 2) return 499;
-    if (totalJars <= 5) return 599;
-    return 699;
-  }
-
+  if (fulfilmentOption === "second") return 499;
+  if (fulfilmentOption === "first") return 1199;
   return 0;
 }
 
