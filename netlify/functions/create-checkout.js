@@ -22,9 +22,9 @@ const DELIVERY_LABELS = {
   first: "Special Delivery"
 };
 
-const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. We will notify you once your order is ready for pickup and share the pickup details/address with you. As every jar is made to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. We'll notify you by text or email once your order is ready for collection, along with the pickup address and details. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
-const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care and shipped within 24-48 hours. You will receive a tracking number once it is on its way. As every jar is made to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. Once your order is ready and collected by our courier, we'll send you a tracking number by text or email so you can follow your delivery. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
 function jsonResponse(statusCode, data) {
   return {
@@ -70,6 +70,12 @@ function getEstimatedWeightKg(totalJars) {
   return Math.ceil(totalJars / 2) * 0.7;
 }
 
+function getReceiptDescription(fulfilmentOption, orderSummary) {
+  const nextStepMessage = fulfilmentOption === "pickup" ? PICKUP_THANK_YOU_MESSAGE : DELIVERY_THANK_YOU_MESSAGE;
+
+  return `${BUSINESS_NAME} order: ${orderSummary}. ${nextStepMessage}`;
+}
+
 function calculateProductDiscount(couponCode, productSubtotal) {
   const normalisedCode = normaliseCouponCode(couponCode);
   if (!normalisedCode || productSubtotal <= 0) return null;
@@ -105,6 +111,7 @@ function buildOrder(payload) {
   if (!items.length) throw new Error("Your cart is empty.");
 
   const lineItems = [];
+  const orderSummaryParts = [];
   let totalJars = 0;
   let productSubtotal = 0;
 
@@ -118,6 +125,7 @@ function buildOrder(payload) {
 
     totalJars += catalogueItem.jarCount * quantity;
     productSubtotal += catalogueItem.price * quantity;
+    orderSummaryParts.push(`${quantity} x ${catalogueItem.name}`);
 
     lineItems.push({
       quantity,
@@ -138,7 +146,7 @@ function buildOrder(payload) {
     throw new Error("Minimum order is 2 jars.");
   }
 
-  return { lineItems, totalJars, productSubtotal };
+  return { lineItems, totalJars, productSubtotal, orderSummary: orderSummaryParts.join("; ") };
 }
 
 exports.handler = async function (event) {
@@ -180,6 +188,20 @@ exports.handler = async function (event) {
     const addressText = fulfilmentOption === "pickup"
       ? "Pickup order"
       : `${customer.address}, ${customer.city}, ${customer.postcode}`;
+    const orderSummary = order.orderSummary.slice(0, 500);
+    const sharedMetadata = {
+      order_summary: orderSummary,
+      customer_name: customerName,
+      customer_email: customerEmail,
+      customer_phone: customerPhone,
+      fulfilment: deliveryLabel,
+      total_jars: String(order.totalJars),
+      estimated_weight_kg: String(estimatedWeightKg),
+      delivery_address: addressText,
+      order_note: orderNote || "None",
+      coupon_code: discount ? discount.code : "None",
+      product_discount_pence: discount ? String(discount.amount) : "0"
+    };
 
     const lineItems = [...order.lineItems];
 
@@ -203,25 +225,15 @@ exports.handler = async function (event) {
       client_reference_id: `${Date.now()}-${customerEmail}`,
       success_url: `${siteUrl}/?payment=success`,
       cancel_url: `${siteUrl}/?payment=cancelled`,
-      metadata: {
-        customer_name: customerName,
-        customer_email: customerEmail,
-        customer_phone: customerPhone,
-        fulfilment: deliveryLabel,
-        total_jars: String(order.totalJars),
-        estimated_weight_kg: String(estimatedWeightKg),
-        delivery_address: addressText,
-        order_note: orderNote || "None",
-        coupon_code: discount ? discount.code : "None",
-        product_discount_pence: discount ? String(discount.amount) : "0"
-      },
+      metadata: sharedMetadata,
       payment_intent_data: {
         receipt_email: customerEmail,
-        description: fulfilmentOption === "pickup" ? PICKUP_THANK_YOU_MESSAGE : DELIVERY_THANK_YOU_MESSAGE
+        description: getReceiptDescription(fulfilmentOption, orderSummary),
+        metadata: sharedMetadata
       },
       custom_text: {
         submit: {
-          message: "Orders are prepared fresh. Orders cancelled after 6 hours may not be refundable."
+          message: "Orders are prepared fresh. Orders cancelled after 6 hours are non-refundable."
         },
         after_submit: {
           message: fulfilmentOption === "pickup" ? PICKUP_THANK_YOU_MESSAGE : DELIVERY_THANK_YOU_MESSAGE

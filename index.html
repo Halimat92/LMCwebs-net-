@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leemah Cakes n More | Cake Jars</title>
+  <title>Leemah Cakes &amp; More | Cake Jars &amp; Custom Cakes in Chelmsford</title>
   <meta name="description" content="Luxury cake jars by Leemah Cakes n More. Fresh layered cake jars for gifting, events and sweet cravings in Chelmsford." />
 
   <!--
@@ -1594,8 +1594,9 @@
       position: absolute;
       top: calc(100% + 8px);
       left: 0;
-      right: 0;
+      right: auto;
       z-index: 20;
+      width: min(100%, 420px);
       background: white;
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -1620,6 +1621,8 @@
       font-weight: 700;
       color: #2B2528;
       cursor: pointer;
+      width: 100%;
+      text-align: left;
     }
 
     .review-flavour-option:hover {
@@ -1627,7 +1630,10 @@
     }
 
     .review-flavour-option input {
-      width: auto;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin: 0;
       accent-color: var(--pink);
     }
 
@@ -2762,7 +2768,7 @@
             <p class="footer-copy">Leemah Cakes n More creates beautiful cakes, cake jars and sweet treats for special moments in Chelmsford and surrounding areas.</p>
             <div class="footer-list">
               <span>📍 Chelmsford, Essex</span>
-              <span>✉️ hello@leemahcakes.co.uk</span>
+              <span>✉️ leemahcakesuk@gmail.com</span>
               <span>💬 WhatsApp orders accepted</span>
               <span>🕒 Order Policy: Freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable.</span>
             </div>
@@ -3363,7 +3369,7 @@ function createBundleJarsFallback(bundle) {
         return;
       }
 
-      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, Standard Delivery or Special Delivery.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}</div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe secure checkout when you place the order.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "Special Delivery" : "Standard Delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
+      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, Standard Delivery or Special Delivery.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}</div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe's secure checkout to complete your payment.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "Special Delivery" : "Standard Delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
       document.getElementById("checkout-form").addEventListener("submit", async function(event) {
         event.preventDefault();
         const form = event.target;
