@@ -787,11 +787,11 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 10;
-      width: 44px;
+      width: 30px;
       height: 44px;
-      border-radius: 50%;
+      border-radius: 0;
       border: none;
-      background: rgba(255,255,255,.96);
+      background: transparent;
       color: var(--black);
       font-size: 28px;
       font-weight: 900;
@@ -799,28 +799,30 @@
       display: grid;
       place-items: center;
       cursor: pointer;
-      box-shadow: 0 8px 22px rgba(0,0,0,.18);
+      box-shadow: none;
+      text-shadow: 0 1px 8px rgba(255,255,255,.8);
     }
     .slider-arrow:hover {
-      background: white;
+      background: transparent;
+      color: var(--pink);
     }
     .slider-arrow-right {
-      right: 14px;
+      right: 8px;
     }
     .slider-arrow-left {
-      left: 14px;
+      left: 8px;
     }
     @media (max-width: 640px) {
       .slider-arrow {
-        width: 38px;
+        width: 26px;
         height: 38px;
         font-size: 24px;
       }
       .slider-arrow-right {
-        right: 10px;
+        right: 6px;
       }
       .slider-arrow-left {
-        left: 10px;
+        left: 6px;
       }
     }
     .info-slide-card {
@@ -828,7 +830,7 @@
       min-height: 212px;
       background: rgba(255,255,255,.95);
       border-radius: 24px;
-      padding: 22px;
+      padding: 18px 22px;
       color: var(--black);
       box-shadow: 0 14px 32px rgba(0,0,0,.14);
       position: relative;
@@ -841,12 +843,36 @@
       line-height: 1;
     }
     .info-slide-card p {
-      margin: 8px 0;
+      margin: 7px 0;
       color: #6f5662;
-      line-height: 1.5;
-      font-size: 13px;
+      line-height: 1.42;
+      font-size: 12px;
     }
     .info-slide-card strong { color: var(--pink); }
+    .info-storage-note {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 18px;
+      z-index: 5;
+      background: rgba(255,255,255,.96);
+      border-radius: 18px;
+      padding: 10px 14px;
+      color: #6f5662;
+      font-size: 12px;
+      line-height: 1.45;
+      box-shadow: 0 10px 26px rgba(0,0,0,.14);
+    }
+    .info-storage-note strong { color: var(--pink); }
+    @media (max-width: 640px) {
+      .info-storage-note {
+        left: 18px;
+        right: 18px;
+        bottom: 14px;
+        font-size: 11px;
+        padding: 9px 12px;
+      }
+    }
 
     /* BUNDLE DEALS */
     .bundle-section {
@@ -2768,7 +2794,7 @@
             <p class="footer-copy">Leemah Cakes n More creates beautiful cakes, cake jars and sweet treats for special moments in Chelmsford and surrounding areas.</p>
             <div class="footer-list">
               <span>📍 Chelmsford, Essex</span>
-              <span>✉️ leemahcakesuk@gmail.com</span>
+              <span>✉️ leemahcakesnmore@gmail.com</span>
               <span>💬 WhatsApp orders accepted</span>
               <span>🕒 Order Policy: Freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable.</span>
             </div>
@@ -2994,6 +3020,8 @@
       response.innerHTML = answers[type] || "";
     }
 
+    const jarStorageInformation = "Keep refrigerated and enjoy within 3 days. Once opened, consume within 24 hours. For best taste, allow the jar to sit at room temperature for 10-15 minutes before serving.";
+
     const products = [
       {
         id: "red-velvet",
@@ -3188,8 +3216,9 @@
             <div class="jar-photo-wrap"><img class="jar-photo" src="${product.image}" alt="${product.name}" onerror="showJarFallback(this)"><div class="jar-fallback">${createIllustratedJar(product)}</div></div>
           </div>
           <div class="slide" data-slide="info">
-            <img class="jar-photo" src="${product.infoImage}" alt="${product.shortName} ingredients and allergy information" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div class="info-slide-card" style="display:none;"><h4>${product.shortName}</h4><p><strong>Ingredients:</strong> ${product.ingredients}</p><p><strong>Allergy information:</strong> ${product.allergens}</p></div>
+            <img class="jar-photo" src="${product.infoImage}" alt="${product.shortName} ingredients and allergy information" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.info-storage-note').style.display='none';">
+            <div class="info-slide-card" style="display:none;"><p><strong>Ingredients:</strong> ${product.ingredients}</p><p><strong>Allergy information:</strong> ${product.allergens}</p><p><strong>Storage information:</strong> ${jarStorageInformation}</p></div>
+            <div class="info-storage-note"><strong>Storage information:</strong> ${jarStorageInformation}</div>
           </div>
           <button class="slider-arrow slider-arrow-right" type="button" aria-label="View ingredients and allergy information" data-slider-arrow="right" onclick="setProductSlide('${product.id}', 'info')">›</button>
           <button class="slider-arrow slider-arrow-left" type="button" aria-label="Back to product photo" data-slider-arrow="left" onclick="setProductSlide('${product.id}', 'front')" style="display: none;">‹</button>
