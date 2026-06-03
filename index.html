@@ -1,10 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leemah Cakes &amp; More | Cake Jars &amp; Custom Cakes in Chelmsford</title>
   <meta name="description" content="Luxury cake jars by Leemah Cakes n More. Fresh layered cake jars for gifting, events and sweet cravings in Chelmsford." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FN21MYL37T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FN21MYL37T');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x1aivzhwbp");
+  </script>
 
   <!--
     EASY IMAGE SETUP
@@ -778,7 +796,7 @@
 
 
 
-    /* PRODUCT IMAGE SLIDER: front image + ingredients/allergy information */
+    /* PRODUCT IMAGE SLIDER: front image + ingredients/allergen information */
     .product-slider { position: relative; }
     .slide { display: none; width: 100%; height: 100%; }
     .slide.active { display: grid; place-items: center; }
@@ -2546,7 +2564,7 @@
             <div>
               <div class="bundle-pill">🎁 Bundle Deals</div>
               <h2>More Jars,<br><span>More Savings</span></h2>
-              <p>Choose from 3-jar, 4-jar and 6-jar bundles. Mix and match your favourite flavours for gifting, events or sweet cravings.</p>
+              <p>Choose from 3-jar, 4-jar and 5-jar bundles. Mix and match your favourite flavours for gifting, events or sweet cravings.</p>
               <a class="btn btn-primary" href="#bundle-grid" style="margin-top: 24px;">View Bundle Deals →</a>
             </div>
             <div class="bundle-jars">
@@ -2699,7 +2717,7 @@
             <h2 style="font-size: 52px; margin: 0;">How it works</h2>
 
             <div class="steps">
-              <div class="step"><div class="step-num">1</div><div><h3>Choose your flavour or bundle</h3><p>Select your favourite jar or choose a 3, 4 or 6 jar bundle.</p></div></div>
+              <div class="step"><div class="step-num">1</div><div><h3>Choose your flavour or bundle</h3><p>Select your favourite jar or choose a 3, 4 or 5 jar bundle.</p></div></div>
               <div class="step"><div class="step-num">2</div><div><h3>Add to cart</h3><p>Minimum order is 2 jars. Review your quantity before checkout.</p></div></div>
               <div class="step"><div class="step-num">3</div><div><h3>Select delivery</h3><p>Choose pickup, Standard Delivery or Special Delivery.</p></div></div>
               <div class="step"><div class="step-num">4</div><div><h3>Enjoy or gift</h3><p>Perfect for yourself, loved ones, events or a small luxury treat.</p></div></div>
@@ -2890,7 +2908,7 @@
           <label class="field"><span>Quantity / serving size</span><input name="quantity-serving-size" placeholder="e.g. 12 jars or 20 servings" /></label>
         </div>
 
-        <label class="field"><span>Details</span><textarea name="details" placeholder="Tell me the occasion, colour theme, message, delivery/collection preference and any allergy information."></textarea></label>
+        <label class="field"><span>Details</span><textarea name="details" placeholder="Tell me the occasion, colour theme, message, delivery/collection preference and any allergen information."></textarea></label>
         <button class="btn btn-primary" type="submit" style="width: 100%;">Send enquiry</button>
       </form>
     </div>
@@ -2969,7 +2987,7 @@
         bundles: `
           <div class="help-chatbot-response">
             <strong>Bundle deals</strong><br>
-            We currently offer 3-jar, 4-jar and 6-jar bundles. You can mix and match flavours.
+            We currently offer 3-jar, 4-jar and 5-jar bundles. You can mix and match flavours.
             <div class="help-chatbot-actions">
               <a class="help-chatbot-link" href="#bundles" onclick="closeHelpChatbot()">See bundle deals</a>
             </div>
@@ -2998,8 +3016,8 @@
 
         allergy: `
           <div class="help-chatbot-response">
-            <strong>Allergy information</strong><br>
-            Each dessert jar has an ingredients and allergy information slide in the product image section. Please check before ordering. Our products are made in a kitchen that handles allergens.
+            <strong>Allergen information</strong><br>
+            Each dessert jar has an ingredients and allergen information slide in the product image section. Please check before ordering. Our products are made in a kitchen that handles allergens.
             <div class="help-chatbot-actions">
               <a class="help-chatbot-link" href="#flavours" onclick="closeHelpChatbot()">View flavours</a>
             </div>
@@ -3110,12 +3128,6 @@
       }
     ];
 
-    // const bundles = [
-    //   { id: "bundle-duo", type: "bundle", name: "The Duo Bundle", shortName: "The Duo", subtitle: "2 handcrafted jars", description: "Perfect treat for two. Pick any 2 flavours.", price: 14.99, oldPrice: 15.98, saveText: "Save £0.99", perJar: "£7.50 per jar", jarCount: 2, tag: "Bundle Deal", bg: "linear-gradient(135deg,#9B0D12 0%,#D8673B 100%)" },
-    //   { id: "bundle-trio", type: "bundle", name: "The Trio Bundle", shortName: "The Trio", subtitle: "3 handcrafted jars", description: "Most popular gift size. Mix and match flavours.", price: 20.99, oldPrice: 23.97, saveText: "Save £2.98", perJar: "£7.00 per jar", jarCount: 3, tag: "Most Popular", bg: "linear-gradient(135deg,#E8197A 0%,#A60019 100%)", featured: true },
-    //   { id: "bundle-six", type: "bundle", name: "The Six Pack Bundle", shortName: "The Six Pack", subtitle: "6 handcrafted jars", description: "Best value. Ideal for gifting, family treats or events.", price: 38.99, oldPrice: 47.94, saveText: "Save £8.95", perJar: "£6.50 per jar", jarCount: 6, tag: "Best Value", bg: "linear-gradient(135deg,#4B2D0E 0%,#C9A84C 100%)" }
-    // ];
-
     const bundles = [
       {
         id: "bundle-trio",
@@ -3124,10 +3136,8 @@
         shortName: "The Trio",
         subtitle: "3 handcrafted jars",
         description: "Perfect for gifting or treating yourself. Pick any 3 flavours.",
-        price: 20.37,
-        oldPrice: 21.84,
-        saveText: "Save £1.47",
-        perJar: "£6.79 per jar",
+        price: 21.84,
+        perJar: "£7.28 per jar",
         jarCount: 3,
         // tag: "Popular Pick",
         bg: "linear-gradient(135deg,#E8197A 0%,#A60019 100%)",
@@ -3141,10 +3151,8 @@
         shortName: "The Four Pack",
         subtitle: "4 handcrafted jars",
         description: "A generous mix-and-match box for sharing, gifting or stocking up.",
-        price: 27.15,
-        oldPrice: 29.12,
-        saveText: "Save £1.97",
-        perJar: "£6.79 per jar",
+        price: 29.12,
+        perJar: "£7.28 per jar",
         jarCount: 4,
         // tag: "Great Value",
         tag: "Popular Pick",
@@ -3152,20 +3160,20 @@
         image: "Images/4-combo.png"
       },
       {
-        id: "bundle-six",
+        id: "bundle-five",
         type: "bundle",
-        name: "The Six Pack Bundle",
-        shortName: "The Six Pack",
-        subtitle: "6 handcrafted jars",
+        name: "The Five Pack Bundle",
+        shortName: "The Five Pack",
+        subtitle: "5 handcrafted jars",
         description: "Best value. Ideal for families, gifting, events or dessert tables.",
-        price: 32.45,
+        price: 35.50,
         oldPrice: 36.40,
-        saveText: "Save £3.95",
-        perJar: "£6.49 per jar",
-        jarCount: 6,
+        saveText: "Save £0.90",
+        perJar: "£7.10 per jar",
+        jarCount: 5,
         tag: "Best Value",
         bg: "linear-gradient(135deg,#4B2D0E 0%,#C9A84C 100%)",
-        image: "Images/6-combo.png",
+        image: "Images/5-combo.png",
         featured: true
       }
     ];
@@ -3216,11 +3224,11 @@
             <div class="jar-photo-wrap"><img class="jar-photo" src="${product.image}" alt="${product.name}" onerror="showJarFallback(this)"><div class="jar-fallback">${createIllustratedJar(product)}</div></div>
           </div>
           <div class="slide" data-slide="info">
-            <img class="jar-photo" src="${product.infoImage}" alt="${product.shortName} ingredients and allergy information" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.info-storage-note').style.display='none';">
-            <div class="info-slide-card" style="display:none;"><p><strong>Ingredients:</strong> ${product.ingredients}</p><p><strong>Allergy information:</strong> ${product.allergens}</p><p><strong>Storage information:</strong> ${jarStorageInformation}</p></div>
+            <img class="jar-photo" src="${product.infoImage}" alt="${product.shortName} ingredients and allergen information" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.info-storage-note').style.display='none';">
+            <div class="info-slide-card" style="display:none;"><p><strong>Ingredients:</strong> ${product.ingredients}</p><p><strong>Allergen information:</strong> ${product.allergens}</p><p><strong>Storage information:</strong> ${jarStorageInformation}</p></div>
             <div class="info-storage-note"><strong>Storage information:</strong> ${jarStorageInformation}</div>
           </div>
-          <button class="slider-arrow slider-arrow-right" type="button" aria-label="View ingredients and allergy information" data-slider-arrow="right" onclick="setProductSlide('${product.id}', 'info')">›</button>
+          <button class="slider-arrow slider-arrow-right" type="button" aria-label="View ingredients and allergen information" data-slider-arrow="right" onclick="setProductSlide('${product.id}', 'info')">›</button>
           <button class="slider-arrow slider-arrow-left" type="button" aria-label="Back to product photo" data-slider-arrow="left" onclick="setProductSlide('${product.id}', 'front')" style="display: none;">‹</button>
         </div>`;
     }
@@ -3312,11 +3320,11 @@ function createBundleJarsFallback(bundle) {
             </div>
             <div class="bundle-card-body">
               <p>${bundle.description}</p>
-              <div class="save-pill">🎉 ${bundle.saveText}</div>
+              ${bundle.saveText ? `<div class="save-pill">🎉 ${bundle.saveText}</div>` : ""}
               <div class="bundle-price-row">
                 <div>
                   <span class="bundle-price">${formatMoney(bundle.price)}</span>
-                  <span class="bundle-old-price">${formatMoney(bundle.oldPrice)}</span>
+                  ${bundle.oldPrice ? `<span class="bundle-old-price">${formatMoney(bundle.oldPrice)}</span>` : ""}
                   <span class="per-jar">${bundle.perJar}</span>
                 </div>
                 ${
@@ -3745,3 +3753,5 @@ function createBundleJarsFallback(bundle) {
 
 </body>
 </html>
+
+

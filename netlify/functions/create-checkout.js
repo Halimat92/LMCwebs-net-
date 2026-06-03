@@ -1,4 +1,4 @@
-const Stripe = require("stripe");
+﻿const Stripe = require("stripe");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -11,9 +11,9 @@ const CATALOGUE = {
   "chocolate-caramel": { name: "Caramel Noir Cake Jar", price: 728, jarCount: 1 },
   "strawberry-bliss": { name: "Strawberry Bliss Cake Jar", price: 728, jarCount: 1 },
   "cookies-cream-noir": { name: "Cookies & Cream Noir Cake Jar", price: 728, jarCount: 1 },
-  "bundle-trio": { name: "The Trio Bundle", price: 2037, jarCount: 3 },
-  "bundle-four": { name: "The Four Pack Bundle", price: 2715, jarCount: 4 },
-  "bundle-six": { name: "The Six Pack Bundle", price: 3245, jarCount: 6 }
+  "bundle-trio": { name: "The Trio Bundle", price: 2184, jarCount: 3 },
+  "bundle-four": { name: "The Four Pack Bundle", price: 2912, jarCount: 4 },
+  "bundle-five": { name: "The Five Pack Bundle", price: 3550, jarCount: 5 }
 };
 
 const DELIVERY_LABELS = {
@@ -34,15 +34,33 @@ function jsonResponse(statusCode, data) {
   };
 }
 
-function getAllowedCoupons() {
-  if (!process.env.STRIPE_COUPONS_JSON) return {};
+function parseCouponJson(envName) {
+  if (!process.env[envName]) return {};
 
   try {
-    return JSON.parse(process.env.STRIPE_COUPONS_JSON);
+    return JSON.parse(process.env[envName]);
   } catch (error) {
-    console.error("STRIPE_COUPONS_JSON is not valid JSON.", error);
+    console.error(`${envName} is not valid JSON.`, error);
     return {};
   }
+}
+
+function getAllowedCoupons() {
+  return parseCouponJson("STRIPE_COUPONS_JSON");
+}
+
+function getLocalCoupons() {
+  const configuredCoupons = parseCouponJson("LOCAL_COUPONS_JSON");
+  const leemah5MaxUses = Number.parseInt(process.env.LEEMAH5_MAX_USES || "10", 10);
+
+  return {
+    LEEMAH5: {
+      percent_off: 5,
+      max_redemptions: Number.isInteger(leemah5MaxUses) && leemah5MaxUses > 0 ? leemah5MaxUses : 10,
+      name: "LEEMAH5 discount"
+    },
+    ...configuredCoupons
+  };
 }
 
 function getSiteUrl(event) {
@@ -76,30 +94,77 @@ function getReceiptDescription(fulfilmentOption, orderSummary) {
   return `${BUSINESS_NAME} order: ${orderSummary}. ${nextStepMessage}`;
 }
 
-function calculateProductDiscount(couponCode, productSubtotal) {
+async function getCouponStore() {
+  const { getStore } = await import("@netlify/blobs");
+  return getStore("leemah-coupon-usage");
+}
+
+async function getCouponUsage(normalisedCode) {
+  try {
+    const store = await getCouponStore();
+    const usage = await store.get(`${normalisedCode}.json`, { type: "json" });
+    return usage || { paidSessions: [] };
+  } catch (error) {
+    console.error("Could not read coupon usage.", error);
+    throw new Error("Coupon code could not be checked. Please try again.");
+  }
+}
+
+function getRedeemedCount(usage) {
+  return Array.isArray(usage.paidSessions) ? usage.paidSessions.length : 0;
+}
+
+function calculateDiscountAmount(coupon, productSubtotal) {
+  if (typeof coupon.percent_off === "number") {
+    return Math.round(productSubtotal * (coupon.percent_off / 100));
+  }
+
+  if (typeof coupon.amount_off === "number") {
+    return Math.round(coupon.amount_off);
+  }
+
+  throw new Error("That coupon code is not configured correctly.");
+}
+
+async function calculateProductDiscount(couponCode, productSubtotal) {
   const normalisedCode = normaliseCouponCode(couponCode);
   if (!normalisedCode || productSubtotal <= 0) return null;
+
+  const localCoupon = getLocalCoupons()[normalisedCode];
+  if (localCoupon) {
+    const maxRedemptions = Number.parseInt(localCoupon.max_redemptions, 10);
+    const usage = await getCouponUsage(normalisedCode);
+    const redeemedCount = getRedeemedCount(usage);
+
+    if (Number.isInteger(maxRedemptions) && maxRedemptions > 0 && redeemedCount >= maxRedemptions) {
+      throw new Error("That coupon code is expired.");
+    }
+
+    let amount = calculateDiscountAmount(localCoupon, productSubtotal);
+    amount = Math.max(0, Math.min(amount, productSubtotal));
+
+    if (amount <= 0) return null;
+
+    return {
+      type: "local_coupon",
+      code: normalisedCode,
+      amount,
+      name: localCoupon.name || `${normalisedCode} discount`
+    };
+  }
 
   const coupon = getAllowedCoupons()[normalisedCode];
   if (!coupon) {
     throw new Error("That coupon code is not valid.");
   }
 
-  let amount = 0;
-
-  if (typeof coupon.percent_off === "number") {
-    amount = Math.round(productSubtotal * (coupon.percent_off / 100));
-  } else if (typeof coupon.amount_off === "number") {
-    amount = Math.round(coupon.amount_off);
-  } else {
-    throw new Error("That coupon code is not configured correctly.");
-  }
-
+  let amount = calculateDiscountAmount(coupon, productSubtotal);
   amount = Math.max(0, Math.min(amount, productSubtotal));
 
   if (amount <= 0) return null;
 
   return {
+    type: "generated_coupon",
     code: normalisedCode,
     amount,
     name: coupon.name || `${normalisedCode} discount`
@@ -182,7 +247,7 @@ exports.handler = async function (event) {
     const order = buildOrder(payload);
     const deliveryAmount = getDeliveryAmount(fulfilmentOption, order.totalJars);
     const estimatedWeightKg = getEstimatedWeightKg(order.totalJars);
-    const discount = calculateProductDiscount(payload.couponCode, order.productSubtotal);
+    const discount = await calculateProductDiscount(payload.couponCode, order.productSubtotal);
     const deliveryLabel = DELIVERY_LABELS[fulfilmentOption];
     const orderNote = String(payload.orderNote || "").slice(0, 450);
     const addressText = fulfilmentOption === "pickup"
@@ -200,7 +265,8 @@ exports.handler = async function (event) {
       delivery_address: addressText,
       order_note: orderNote || "None",
       coupon_code: discount ? discount.code : "None",
-      product_discount_pence: discount ? String(discount.amount) : "0"
+      product_discount_pence: discount && discount.amount ? String(discount.amount) : "0",
+      coupon_type: discount ? discount.type : "None"
     };
 
     const lineItems = [...order.lineItems];
@@ -249,7 +315,8 @@ exports.handler = async function (event) {
         duration: "once",
         metadata: {
           entered_code: discount.code,
-          product_only_discount: "true"
+          product_only_discount: "true",
+          coupon_type: discount.type
         }
       });
 
@@ -266,3 +333,5 @@ exports.handler = async function (event) {
     });
   }
 };
+
+
