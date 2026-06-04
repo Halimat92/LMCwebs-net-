@@ -105,8 +105,8 @@ async function getCouponUsage(normalisedCode) {
     const usage = await store.get(`${normalisedCode}.json`, { type: "json" });
     return usage || { paidSessions: [] };
   } catch (error) {
-    console.error("Could not read coupon usage.", error);
-    throw new Error("Coupon code could not be checked. Please try again.");
+    console.error("Could not read coupon usage. Checkout will continue without blocking the customer.", error);
+    return { paidSessions: [], storageUnavailable: true };
   }
 }
 
