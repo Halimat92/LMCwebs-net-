@@ -16,6 +16,13 @@ function normaliseCouponCode(code) {
 
 async function getCouponStore() {
   const { getStore } = await import("@netlify/blobs");
+  const siteID = process.env.NETLIFY_BLOBS_SITE_ID;
+  const token = process.env.NETLIFY_BLOBS_TOKEN;
+
+  if (siteID && token) {
+    return getStore("leemah-coupon-usage", { siteID, token });
+  }
+
   return getStore("leemah-coupon-usage");
 }
 
@@ -77,6 +84,9 @@ exports.handler = async function (event) {
     return jsonResponse(200, { received: true });
   } catch (error) {
     console.error("Could not record coupon redemption.", error);
-    return jsonResponse(500, { error: "Could not record coupon redemption." });
+    return jsonResponse(200, {
+      received: true,
+      warning: "Coupon redemption could not be recorded."
+    });
   }
 };

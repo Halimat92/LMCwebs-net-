@@ -22,9 +22,9 @@ const DELIVERY_LABELS = {
   first: "Special Delivery"
 };
 
-const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. We'll notify you by text or email once your order is ready for collection, along with the pickup address and details. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes n More! Your order will be freshly prepared with care. We'll notify you by text or email once your order is ready for collection, along with the pickup address and details. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
-const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes & More! Your order will be freshly prepared with care. Once your order is ready and collected by our courier, we'll send you a tracking number by text or email so you can follow your delivery. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes n More! Your order will be freshly prepared with care. Once your order is ready and collected by our courier, we'll send you a tracking number by text or email so you can follow your delivery. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
 function jsonResponse(statusCode, data) {
   return {
@@ -96,6 +96,13 @@ function getReceiptDescription(fulfilmentOption, orderSummary) {
 
 async function getCouponStore() {
   const { getStore } = await import("@netlify/blobs");
+  const siteID = process.env.NETLIFY_BLOBS_SITE_ID;
+  const token = process.env.NETLIFY_BLOBS_TOKEN;
+
+  if (siteID && token) {
+    return getStore("leemah-coupon-usage", { siteID, token });
+  }
+
   return getStore("leemah-coupon-usage");
 }
 
@@ -233,9 +240,14 @@ exports.handler = async function (event) {
     const customerName = String(customer.name || "").trim();
     const customerPhone = String(customer.phone || "").trim();
     const siteUrl = getSiteUrl(event);
+    const allergenAcknowledged = payload.allergenAcknowledged === true;
 
     if (!customerEmail || !customerName || !customerPhone) {
       throw new Error("Please enter your name, email and phone number.");
+    }
+
+    if (!allergenAcknowledged) {
+      throw new Error("Please confirm that you have checked the allergen information before placing your order.");
     }
 
     if (fulfilmentOption !== "pickup") {
@@ -264,6 +276,7 @@ exports.handler = async function (event) {
       estimated_weight_kg: String(estimatedWeightKg),
       delivery_address: addressText,
       order_note: orderNote || "None",
+      allergen_acknowledged: allergenAcknowledged ? "Yes" : "No",
       coupon_code: discount ? discount.code : "None",
       product_discount_pence: discount && discount.amount ? String(discount.amount) : "0",
       coupon_type: discount ? discount.type : "None"
@@ -289,7 +302,7 @@ exports.handler = async function (event) {
       line_items: lineItems,
       customer_email: customerEmail,
       client_reference_id: `${Date.now()}-${customerEmail}`,
-      success_url: `${siteUrl}/?payment=success`,
+      success_url: `${siteUrl}/thank-you.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/?payment=cancelled`,
       metadata: sharedMetadata,
       payment_intent_data: {

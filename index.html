@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leemah Cakes &amp; More | Cake Jars &amp; Custom Cakes in Chelmsford</title>
+  <title>Leemah Cakes n More | Cake Jars, Treat Boxes &amp; Custom Cakes</title>
   <meta name="description" content="Luxury cake jars by Leemah Cakes n More. Fresh layered cake jars for gifting, events and sweet cravings in Chelmsford." />
 
   <!-- Google tag (gtag.js) -->
@@ -2207,6 +2207,34 @@
       font-weight: 700;
     }
 
+    .allergen-acknowledgement {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #FFF4E5;
+      color: #5f3900;
+      border: 1px solid #FFDDA3;
+      border-radius: 18px;
+      padding: 13px 14px;
+      line-height: 1.5;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .allergen-acknowledgement input {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--pink);
+    }
+
+    .allergen-acknowledgement span {
+      display: block;
+    }
+
     /* NEED HELP CHATBOT - ADDED ONLY */
     .help-chatbot {
       position: fixed;
@@ -2214,6 +2242,10 @@
       bottom: 24px;
       z-index: 95;
       font-family: 'Outfit', system-ui, sans-serif;
+    }
+
+    body.checkout-open .help-chatbot {
+      display: none;
     }
 
     .help-chatbot-button {
@@ -3424,7 +3456,7 @@ function createBundleJarsFallback(bundle) {
         return;
       }
 
-      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, Standard Delivery or Special Delivery.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}</div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe's secure checkout to complete your payment.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "Special Delivery" : "Standard Delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
+      container.innerHTML = `<form id="checkout-form"><h2>Checkout</h2><p class="modal-sub">Choose pickup, Standard Delivery or Special Delivery.</p><div class="two-col"><label class="field"><span>Full name</span><input name="name" required placeholder="Your name" /></label><label class="field"><span>Email</span><input name="email" required type="email" placeholder="you@email.com" /></label></div><div style="margin-top: 14px;"><label class="field"><span>Phone</span><input name="phone" required placeholder="+44..." /></label></div><div class="payment-box"><strong>Delivery / collection option</strong>${renderFulfilmentOptions()}</div>${renderDeliveryAddressFields()}<div class="order-policy-note"><strong>Order Policy:</strong> Each order is freshly made to order. Cancellations requested more than 6 hours after placing an order are non-refundable. We do not accept returns on food items once prepared, dispatched, delivered or collected.</div><div style="margin-top: 14px;"><label class="field"><span>Flavour choices / gift note / delivery instruction</span><textarea name="orderNote" placeholder="For bundles, write your flavour choices here. Example: 2 Rouge Velvet, 1 Ivory Dream."></textarea></label></div><div style="margin-top: 14px;"><label class="field"><span>Coupon code </span><input name="couponCode" placeholder="e.g. LAUNCH10" /></label></div><label class="allergen-acknowledgement"><input type="checkbox" name="allergenAcknowledgement" required><span><strong>Allergen acknowledgement:</strong> I confirm that I have reviewed the ingredients and allergen information listed for my selected products before placing this order.</span></label><div class="payment-box"><strong>💳 Secure payment</strong><div class="payment-placeholder">You will be taken to Stripe's secure checkout to complete your payment.</div><p style="color: var(--muted); font-size: 12px; line-height: 1.6;">Payments are processed securely by Stripe. Your card details are never stored on this website.</p></div><div class="summary"><div class="summary-row"><span>Total jars</span><strong>${getTotalJars()}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>${fulfilmentOption === "pickup" ? "Pickup" : fulfilmentOption === "first" ? "Special Delivery" : "Standard Delivery"}</span><strong>${getDelivery() === 0 ? "Free" : formatMoney(getDelivery())}</strong></div><div class="summary-total"><span>Total</span><span>${formatMoney(getTotal())}</span></div></div><button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 18px;">Place order</button></form>`;
       document.getElementById("checkout-form").addEventListener("submit", async function(event) {
         event.preventDefault();
         const form = event.target;
@@ -3440,7 +3472,8 @@ function createBundleJarsFallback(bundle) {
             address: fulfilmentOption === "pickup" ? "" : (formData.get("address") || "")
           },
           orderNote: formData.get("orderNote") || "",
-          couponCode: formData.get("couponCode") || ""
+          couponCode: formData.get("couponCode") || "",
+          allergenAcknowledged: formData.get("allergenAcknowledgement") === "on"
         };
 
         if (submitButton) {
@@ -3502,7 +3535,8 @@ function createBundleJarsFallback(bundle) {
         subtotalAmount: Math.round(getSubtotal() * 100),
         couponCode: orderDetails.couponCode || "",
         customer: orderDetails.customer,
-        orderNote: orderDetails.orderNote
+        orderNote: orderDetails.orderNote,
+        allergenAcknowledged: orderDetails.allergenAcknowledged === true
       };
 
       const response = await fetch("/.netlify/functions/create-checkout", {
@@ -3535,8 +3569,16 @@ function createBundleJarsFallback(bundle) {
       closeModal("cart-modal"); renderCheckout(); openModal("checkout-modal");
     }
     function finishOrder() { cart = []; fulfilmentOption = "pickup"; refresh(); closeModal("checkout-modal"); }
-    function openModal(id) { document.getElementById(id).classList.add("show"); document.body.style.overflow = "hidden"; }
-    function closeModal(id) { document.getElementById(id).classList.remove("show"); document.body.style.overflow = ""; }
+    function openModal(id) {
+      document.getElementById(id).classList.add("show");
+      document.body.style.overflow = "hidden";
+      document.body.classList.toggle("checkout-open", id === "checkout-modal");
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("show");
+      document.body.style.overflow = "";
+      if (id === "checkout-modal") document.body.classList.remove("checkout-open");
+    }
     function openMobileMenu() { document.querySelector("[data-mobile-menu]").classList.add("show"); document.body.style.overflow = "hidden"; }
     function closeMobileMenu() { document.querySelector("[data-mobile-menu]").classList.remove("show"); document.body.style.overflow = ""; }
     function updateReviewFlavourToggle() {

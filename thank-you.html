@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank you | Leemah Cakes n More</title>
+  <meta name="description" content="Thank you for ordering from Leemah Cakes n More. Your order has been received and will be freshly prepared with care." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FN21MYL37T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FN21MYL37T');
+    gtag('event', 'purchase_confirmation', {
+      event_category: 'checkout',
+      event_label: 'thank_you_page'
+    });
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x1aivzhwbp");
+  </script>
+  <script>
+    window.addEventListener("load", function() {
+      if (typeof clarity === "function") {
+        clarity("event", "purchase_confirmation");
+      }
+    });
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1019486113750698');
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1019486113750698&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --pink: #E8197A;
+      --black: #111111;
+      --cream: #FFF9F5;
+      --blush: #FFEAF3;
+      --gold: #C9A84C;
+      --muted: #8E6F7E;
+      --border: #F0DDE6;
+      --green: #1F9D68;
+      --green-dark: #14764D;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(232, 25, 122, .11), transparent 34%),
+        linear-gradient(135deg, var(--cream), #fff 48%, var(--blush));
+      color: var(--black);
+      font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    .topbar {
+      background: var(--black);
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .topbar-track {
+      display: flex;
+      width: max-content;
+      animation: announcementScroll 22s linear infinite;
+    }
+
+    .topbar-track span {
+      display: inline-block;
+      padding: 0 45px;
+    }
+
+    @keyframes announcementScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .lc-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .lc-logo-circle {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid #F6C8DB;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      flex: 0 0 auto;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 999px;
+      display: block;
+    }
+
+    .logo-fallback {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .lc-l, .lc-c {
+      position: absolute;
+      top: -3px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .lc-l { left: 8px; color: var(--pink); }
+    .lc-c { right: 8px; color: var(--black); }
+
+    .lc-cake {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+    }
+
+    .lc-logo-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: .9;
+      color: var(--black);
+    }
+
+    .lc-logo-text span { color: var(--pink); }
+
+    .lc-logo-sub {
+      margin: 5px 0 0;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 12px 30px rgba(232,25,122,.25);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--black);
+      border: 1px solid var(--border);
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 54px 20px 64px;
+    }
+
+    .thank-you-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .confirmation {
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(28px, 6vw, 68px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 20px 60px rgba(232,25,122,.11);
+    }
+
+    .success-mark {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(31,157,104,.24);
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .92;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: #5F4B55;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .details {
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 14px 34px rgba(0,0,0,.04);
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .panel p {
+      margin: 0;
+      color: #5F4B55;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 11px;
+      color: #5F4B55;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .dot {
+      flex: 0 0 auto;
+      width: 9px;
+      height: 9px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(232,25,122,.12);
+    }
+
+    .order-reference {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: var(--cream);
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 24px 20px 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .header-inner {
+        padding: 12px 14px;
+      }
+
+      .lc-logo-circle {
+        width: 48px;
+        height: 48px;
+      }
+
+      .lc-logo-text {
+        font-size: 20px;
+      }
+
+      .header .btn {
+        display: none;
+      }
+
+      .page {
+        padding: 28px 14px 40px;
+      }
+
+      .thank-you-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .confirmation {
+        min-height: auto;
+        padding: 30px 20px;
+        border-radius: 22px;
+      }
+
+      .success-mark {
+        width: 64px;
+        height: 64px;
+        font-size: 30px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .actions {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-track">
+      <span>Fresh dessert jars in Chelmsford - Collection and UK-wide delivery available - Minimum order: 2 jars - Custom orders welcome</span>
+      <span>Fresh dessert jars in Chelmsford - Collection and UK-wide delivery available - Minimum order: 2 jars - Custom orders welcome</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="lc-logo" href="index.html#home" aria-label="Leemah Cakes n More home">
+        <div class="lc-logo-circle">
+          <img class="brand-logo-img" src="Images/logo.jpeg" alt="Leemah Cakes n More logo" onerror="showLogoFallback(this)">
+          <div class="logo-fallback">
+            <span class="lc-l">L</span>
+            <span class="lc-c">C</span>
+            <span class="lc-cake">cake</span>
+          </div>
+        </div>
+        <div>
+          <p class="lc-logo-text">Leemah <span>Cakes</span></p>
+          <p class="lc-logo-sub">Cakes n More</p>
+        </div>
+      </a>
+      <a class="btn btn-light" href="index.html#flavours">Back to shop</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="thank-you-layout">
+      <section class="confirmation" aria-labelledby="thank-you-title">
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <p class="eyebrow">Order confirmed</p>
+        <h1 id="thank-you-title">Thank you for your order.</h1>
+        <p class="lead">
+          Your order has been received by Leemah Cakes n More and will be freshly prepared with care.
+          We will notify you by text or email once your order is ready for collection or delivery.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="index.html#flavours">Continue shopping</a>
+          <a class="btn btn-light" href="index.html#contact">Contact us</a>
+        </div>
+      </section>
+
+      <aside class="details" aria-label="Order information">
+        <section class="panel">
+          <h2>What happens next</h2>
+          <ul class="info-list">
+            <li><span class="dot"></span><span>We check your order details and prepare everything fresh.</span></li>
+            <li><span class="dot"></span><span>You will receive a text or email when your order is ready.</span></li>
+            <li><span class="dot"></span><span>Collection or delivery will follow the details you entered at checkout.</span></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Order note</h2>
+          <p>
+            Orders are prepared fresh. Cancellations requested more than 6 hours after placing your order
+            are non-refundable.
+          </p>
+          <p class="order-reference" id="order-reference" hidden></p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    Leemah Cakes n More
+  </footer>
+
+  <script>
+    function showLogoFallback(img) {
+      img.style.display = "none";
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.style.display = "block";
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get("session_id");
+    const reference = document.getElementById("order-reference");
+    if (sessionId && reference) {
+      reference.hidden = false;
+      reference.textContent = "Payment reference: " + sessionId;
+    }
+  </script>
+</body>
+</html>
