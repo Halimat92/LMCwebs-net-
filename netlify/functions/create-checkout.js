@@ -3,14 +3,14 @@
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const CURRENCY = "gbp";
-const BUSINESS_NAME = "Leemah Cakes n More";
+const BUSINESS_NAME = "Leemah Cakes N More";
 
 const CATALOGUE = {
-  "red-velvet": { name: "Rouge Velvet Cake Jar", price: 728, jarCount: 1 },
-  "vanilla-cake": { name: "Ivory Dream Cake Jar", price: 728, jarCount: 1 },
-  "chocolate-caramel": { name: "Caramel Noir Cake Jar", price: 728, jarCount: 1 },
-  "strawberry-bliss": { name: "Strawberry Bliss Cake Jar", price: 728, jarCount: 1 },
-  "cookies-cream-noir": { name: "Cookies & Cream Noir Cake Jar", price: 728, jarCount: 1 },
+  "red-velvet": { name: "Rouge Velvet Dessert Jar", price: 728, jarCount: 1 },
+  "vanilla-cake": { name: "Ivory Dream Dessert Jar", price: 728, jarCount: 1 },
+  "chocolate-caramel": { name: "Caramel Noir Dessert Jar", price: 728, jarCount: 1 },
+  "strawberry-bliss": { name: "Strawberry Bliss Dessert Jar", price: 728, jarCount: 1 },
+  "cookies-cream-noir": { name: "Cookies & Cream Noir Dessert Jar", price: 728, jarCount: 1 },
   "bundle-trio": { name: "The Trio Bundle", price: 2184, jarCount: 3 },
   "bundle-four": { name: "The Four Pack Bundle", price: 2912, jarCount: 4 },
   "bundle-five": { name: "The Five Pack Bundle", price: 3550, jarCount: 5 }
@@ -22,9 +22,9 @@ const DELIVERY_LABELS = {
   first: "Special Delivery"
 };
 
-const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes n More! Your order will be freshly prepared with care. We'll notify you by text or email once your order is ready for collection, along with the pickup address and details. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const PICKUP_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes N More! Your order will be freshly prepared with care. We'll notify you by text or email once your order is ready for collection, along with the pickup address and details. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
-const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes n More! Your order will be freshly prepared with care. Once your order is ready and collected by our courier, we'll send you a tracking number by text or email so you can follow your delivery. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
+const DELIVERY_THANK_YOU_MESSAGE = "Thank you for ordering from Leemah Cakes N More! Your order will be freshly prepared with care. Once your order is ready and collected by our courier, we'll send you a tracking number by text or email so you can follow your delivery. Please note: as every jar is made fresh to order, cancellations requested more than 6 hours after placing your order are non-refundable. We appreciate your understanding!";
 
 function jsonResponse(statusCode, data) {
   return {

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leemah Cakes n More | Cake Jars, Treat Boxes &amp; Custom Cakes</title>
-  <meta name="description" content="Luxury cake jars by Leemah Cakes n More. Fresh layered cake jars for gifting, events and sweet cravings in Chelmsford." />
+  <title>Leemah Cakes N More | Dessert Jars, Treat Boxes &amp; Custom Cakes</title>
+  <meta name="description" content="Luxury dessert jars by Leemah Cakes N More. Fresh layered dessert jars for gifting, events and sweet cravings in Chelmsford." />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FN21MYL37T"></script>
@@ -243,6 +243,73 @@
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    .hygiene-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid #D5E8C9;
+      border-radius: 999px;
+      background: #F3FFE9;
+      color: #244D16;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.15;
+      box-shadow: 0 8px 22px rgba(36,77,22,.08);
+    }
+
+    .hygiene-badge strong {
+      display: block;
+      color: #244D16;
+      font-size: 13px;
+    }
+
+    .hygiene-badge span {
+      display: block;
+      color: #527345;
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .hygiene-badge-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      color: #1E7A25;
+      font-size: 16px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .footer-hygiene-badge {
+      margin-top: 18px;
+    }
+
+    .fsa-rating-widget {
+      display: inline-block;
+      line-height: 0;
+    }
+
+    .fsa-rating-widget img,
+    .fsa-rating-widget iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .header-actions .fsa-rating-widget {
+      width: 104px;
+    }
+
+    .footer-fsa-rating-widget {
+      width: min(230px, 100%);
+      margin-top: 18px;
     }
 
     .cart-btn, .menu-btn {
@@ -712,6 +779,17 @@
     .jar-stage-compact .jar-photo {
       max-width: 88%;
       max-height: 88%;
+    }
+
+    .cart-bundle-image {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 112px;
+      border-radius: 24px;
+      background: white;
+      object-fit: contain;
+      padding: 8px;
+      box-shadow: inset 0 0 0 1px var(--border);
     }
 
     .jar-fallback {
@@ -2121,6 +2199,8 @@
 
     @media (max-width: 900px) {
       .desktop-nav, .header-actions .btn-light { display: none; }
+      .header-actions .hygiene-badge,
+      .header-actions .fsa-rating-widget { display: none; }
       .menu-btn { display: grid; }
       .hero-inner, .gift-inner, .footer-inner, .custom-cake-card, .bundle-hero { grid-template-columns: 1fr; }
       .hero-inner { padding-top: 52px; }
@@ -2472,8 +2552,8 @@
     <!-- <div class="topbar">Fresh dessert jars in Chelmsford · Collection and  delivery available across uk · Custom orders welcome</div> -->
     <div class="topbar">
   <div class="topbar-track">
-    <span>Fresh dessert jars in Chelmsford · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
-    <span>Fresh dessert jars in Chelmsford · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
+    <span>Fresh dessert jars in Chelmsford · 5-star food hygiene rating awarded · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
+    <span>Fresh dessert jars in Chelmsford · 5-star food hygiene rating awarded · Collection and UK-wide delivery available · Minimum order: 2 jars · Custom orders welcome</span>
   </div>
 </div>
     <header class="header">
@@ -2506,6 +2586,10 @@
         </nav>
 
         <div class="header-actions">
+          <a class="hygiene-badge" href="https://ratings.food.gov.uk/business/1943288/leemah-cakes-n-more" target="_blank" rel="noopener noreferrer" aria-label="Verify our 5 star food hygiene rating on the Food Standards Agency website">
+            <span class="hygiene-badge-mark">5★</span>
+            <span><strong>Food hygiene</strong><span>Verify rating</span></span>
+          </a>
           <button class="btn btn-light" data-open-custom>Custom enquiry</button>
           <!-- <button class="cart-btn" data-open-cart aria-label="Open cart">🛍️<span class="cart-count" data-cart-count>0</span></button> -->
           <button class="cart-btn" data-open-cart aria-label="Open cart">🛒<span class="cart-count" data-cart-count>0</span></button>
@@ -2555,7 +2639,7 @@
           <div>
             <div class="eyebrow">✨ Indulgence in every layer</div>
             <h1>Luxury dessert jars made fresh to satisfy your cravings.</h1>
-            <p>Premium layered dessert jars from Leemah Cakes n More. Perfect for gifting, birthdays, treat boxes, events and personal cravings.</p>
+            <p>Premium layered dessert jars from Leemah Cakes N More. Perfect for gifting, birthdays, treat boxes, events and personal cravings.</p>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="#flavours">Shop dessert jars ›</a>
@@ -2588,7 +2672,7 @@
       <section class="trust">
         <div class="trust-grid">
           <div class="trust-item"><div class="trust-icon">🚚</div><div><strong>Delivery</strong><span>Pickup, Standard or Special Delivery</span></div></div>
-          <div class="trust-item"><div class="trust-icon">✅</div><div><strong>Food Safety</strong><span>Allergen note included</span></div></div>
+          <div class="trust-item"><div class="trust-icon">✅</div><div><strong>Food Safety</strong><span>5-star food hygiene rating awarded</span></div></div>
           <div class="trust-item"><div class="trust-icon">🎁</div><div><strong>Gift Ready</strong><span>Perfect for surprises</span></div></div>
           <div class="trust-item"><div class="trust-icon">2️⃣</div><div><strong>Minimum Order</strong><span>Starts from 2 jars</span></div></div>
         </div>
@@ -2627,7 +2711,7 @@
           <div class="bundle-grid" id="bundle-grid"></div>
 
           <div class="bundle-note">
-            <strong>Mix and match flavours:</strong> When you select a bundle, add your preferred flavour combination in the checkout note. For example: 1 Rouge Velvet, 1 Ivory Dream. In the final website, this can become a proper flavour selector for each jar in the bundle.
+            <strong>Mix and match flavours:</strong> When you select a bundle, add your preferred flavour combination in the checkout note. For example: 1 Rouge Velvet, 1 Ivory Dream.
           </div>
         </div>
       </section>
@@ -2681,13 +2765,13 @@
       <section id="about-baker" class="about-baker-section">
         <div class="about-baker-inner">
           <div class="baker-image-card">
-            <img src="Images/baker.jpg" alt="Leemah, the baker behind Leemah Cakes n More" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <img src="Images/baker.jpg" alt="Leemah, the baker behind Leemah Cakes N More" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div class="baker-fallback" style="display:none;">👩🏽‍🍳</div>
           </div>
           <div class="about-baker-content">
             <p class="section-kicker">The baker behind your cakes</p>
             <h2>Hi, I’m <span>Leemah</span></h2>
-            <p>I’m a Chelmsford-based baker with a deep love for creating desserts that bring joy to people. What started as a passion for baking for family and friends has grown into Leemah Cakes n More.</p>
+            <p>I’m a Chelmsford-based baker with a deep love for creating desserts that bring joy to people. What started as a passion for baking for family and friends has grown into Leemah Cakes N More.</p>
             <p>Every jar is made fresh by hand with real ingredients and a lot of love. I believe that everyone deserves a little indulgence, and I want every bite to feel like a special moment.</p>
             <p>Whether you are treating yourself, gifting someone special or ordering for an event, I put the same care and attention into every single order.</p>
           </div>
@@ -2724,7 +2808,7 @@
         <div class="custom-cake-card">
           <!-- <div class="custom-cake-image">🎂</div> -->
            <div class="custom-cake-image">
-  <img src="Images/custom-cake.png" alt="Custom celebration cakes by Leemah Cakes n More">
+  <img src="Images/custom-cake.png" alt="Custom celebration cakes by Leemah Cakes N More">
 </div>
           <div class="custom-cake-content">
             <div class="eyebrow">Custom cakes available</div>
@@ -2782,9 +2866,9 @@
 
         <!-- REAL CUSTOMER REVIEWS - DO NOT REMOVE -->
         <div class="review-grid" id="reviews-grid">
-          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“The cake jars looked beautiful and tasted even better. I ordered them as a gift and everyone loved them.”</blockquote><div class="review-author"><div class="avatar">G</div><div><strong>Gbemmy</strong><span>Rouge Velvet, Caramel Noir, Strawberry Bliss &amp; Ivory Dream · Verified customer</span></div></div></div>
+          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“The dessert jars looked beautiful and tasted even better. I ordered them as a gift and everyone loved them.”</blockquote><div class="review-author"><div class="avatar">G</div><div><strong>Gbemmy</strong><span>Rouge Velvet, Caramel Noir, Strawberry Bliss &amp; Ivory Dream · Verified customer</span></div></div></div>
           <div class="review-card"><div class="stars">★★★★★</div><blockquote>“The packaging was so neat and premium. Rouge velvet is definitely my favourite. I will order again.”</blockquote><div class="review-author"><div class="avatar">T</div><div><strong>Temi O.</strong><span>Caramel Noir &amp; Rouge Velvet · Verified customer</span></div></div></div>
-          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“I’ve tried a lot of cake jars, but this one stands out. The taste is 100% and every layer is so rich and delicious. I’ll definitely be ordering more!”</blockquote><div class="review-author"><div class="avatar">O</div><div><strong>Oppy</strong><span>Rouge Velvet, Ivory Dream, Caramel Noir, Strawberry Bliss &amp; Cookies &amp; Cream Noir · Verified customer</span></div></div></div>
+          <div class="review-card"><div class="stars">★★★★★</div><blockquote>“I’ve tried a lot of dessert jars, but this one stands out. The taste is 100% and every layer is so rich and delicious. I’ll definitely be ordering more!”</blockquote><div class="review-author"><div class="avatar">O</div><div><strong>Oppy</strong><span>Rouge Velvet, Ivory Dream, Caramel Noir, Strawberry Bliss &amp; Cookies &amp; Cream Noir · Verified customer</span></div></div></div>
         </div>
 
         <!-- REVIEW SUBMISSION FORM -->
@@ -2859,7 +2943,10 @@
               </div>
             </div>
 
-            <p class="footer-copy">Leemah Cakes n More creates beautiful cakes, cake jars and sweet treats for special moments in Chelmsford and surrounding areas.</p>
+            <p class="footer-copy">Leemah Cakes N More creates beautiful cakes, dessert jars and sweet treats for special moments in Chelmsford and surrounding areas.</p>
+            <div class="fsa-rating-widget footer-fsa-rating-widget" aria-label="Official Food Standards Agency food hygiene rating for Leemah Cakes N More">
+              <script src="https://ratings.food.gov.uk/embed/embed-badge.js" data-business-id="1943288" data-rating-style="3" data-welsh="null"></script>
+            </div>
             <div class="footer-list">
               <span>📍 Chelmsford, Essex</span>
               <span>✉️ leemahcakesnmore@gmail.com</span>
@@ -2895,7 +2982,7 @@
           </div>
         </div>
 
-        <div class="copyright">© 2026 Leemah Cakes n More. All rights reserved. Allergen notice: products may contain or come into contact with allergens.</div>
+        <div class="copyright">© 2026 Leemah Cakes N More. All rights reserved. Please check ingredients and allergen information before ordering.</div>
       </section>
     </main>
 
@@ -2971,7 +3058,7 @@
       <div class="help-chatbot-head">
         <div>
           <strong>Need help?</strong>
-          <span>Quick answers for jars, bundles, delivery, allergies and custom cakes.</span>
+          <span>Quick answers for jars, bundles, delivery, allergens and custom cakes.</span>
         </div>
         <button class="help-chatbot-close" type="button" onclick="toggleHelpChatbot()">×</button>
       </div>
@@ -2984,7 +3071,8 @@
           <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('bundles')">I want to view bundle deals</button>
           <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('customCake')">I need a custom event cake quote</button>
           <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('delivery')">Delivery and pickup information</button>
-          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('allergy')">Allergy and ingredients information</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('allergy')">Allergen and ingredients information</button>
+          <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('hygiene')">Food hygiene rating</button>
           <button class="help-chatbot-option" type="button" onclick="showHelpAnswer('whatsapp')">I want to speak to someone</button>
         </div>
 
@@ -3005,6 +3093,7 @@
 
     /* Replace this with your real WhatsApp number later. Use international format without the first 0. */
     const helpWhatsappLink = "https://wa.me/447848281501";
+    const helpHygieneRatingLink = "https://ratings.food.gov.uk/business/1943288/leemah-cakes-n-more";
 
     function toggleHelpChatbot() {
       const chatbotBox = document.getElementById("help-chatbot-box");
@@ -3067,10 +3156,17 @@
         allergy: `
           <div class="help-chatbot-response">
             <strong>Allergen information</strong><br>
-            Each dessert jar has an ingredients and allergen information slide in the product image section. Please check before ordering. Our products are made in a kitchen that handles allergens.
+            Each dessert jar has an ingredients and allergen information slide in the product image section. Please check before ordering.
             <div class="help-chatbot-actions">
               <a class="help-chatbot-link" href="#flavours" onclick="closeHelpChatbot()">View flavours</a>
             </div>
+          </div>
+        `,
+
+        hygiene: `
+          <div class="help-chatbot-response">
+            <strong>Food hygiene rating</strong><br>
+            Leemah Cakes N More has been awarded a 5-star food hygiene rating. You can verify <a class="link" href="${helpHygieneRatingLink}" target="_blank" rel="noopener noreferrer">here</a>.
           </div>
         `,
 
@@ -3088,13 +3184,13 @@
       response.innerHTML = answers[type] || "";
     }
 
-    const jarStorageInformation = "Keep refrigerated and enjoy within 3 days. Once opened, consume within 24 hours. For best taste, allow the jar to sit at room temperature for 10-15 minutes before serving.";
+    const jarStorageInformation = "Keep refrigerated. Once opened, consume within 3 days. For best taste, allow the jar to sit at room temperature for 10-15 minutes before serving.";
 
     const products = [
       {
         id: "red-velvet",
         type: "product",
-        name: "Rouge Velvet Cake Jar",
+        name: "Rouge Velvet Dessert Jar",
         shortName: "Rouge Velvet",
         subtitle: "Cream cheese layers",
         description: "Soft red velvet sponge layered with smooth cream cheese frosting and finished for a rich, indulgent treat.",
@@ -3104,31 +3200,31 @@
         bg: "linear-gradient(135deg,#5A0810 0%,#B9152A 48%,#F5A3B3 100%)",
         image: "Images/red.jpeg",
         infoImage: "Images/red-info.jpeg",
-        ingredients: "Wheat flour, sugar, butter, eggs, milk, cocoa powder, cream cheese, icing sugar, vinegar, baking powder, baking soda, salt,food colouring, vanilla flavouring.",
-        allergens: "Contains gluten, egg and milk. Prepared in a kitchen that handles other allergens.",
+        ingredients: "Wheat flour, sugar, butter (milk), eggs, cocoa powder, cream cheese (milk), icing sugar, lemon juice, raising agent (disodium diphosphate, sodium bicarbonate), salt, colour, flavouring.",
+        allergens: "wheat (gluten), eggs, milk. Prepared in a kitchen that handles other allergens.",
         layers: ["#6B0710", "#FFF4F4", "#A30F22", "#FFF4F4", "#7B0714", "#FFF4F4"]
       },
       {
         id: "vanilla-cake",
         type: "product",
-        name: "Ivory Dream Cake Jar",
+        name: "Ivory Dream Dessert Jar",
         shortName: "Ivory Dream",
-        subtitle: "Lemon cream layers",
-        description: "Moist vanilla with silky whipped lemon cream. Simple, soft and perfect for birthdays, gifts and everyday cravings.",
+        subtitle: "Vanilla cookie layers",
+        description: "Soft vanilla cookies and cream cake layered with silky cream for a dreamy, crunchy indulgence.",
         price: 7.28,
         jarCount: 1,
         tag: "New",
         bg: "linear-gradient(135deg,#E8D4A4 0%,#FFF8E8 50%,#D7B75C 100%)",
         image: "Images/vanilla.jpeg",
         infoImage: "Images/vanilla-info.jpeg",
-        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, whipping cream, icing sugar, baking powder, salt, flavouring.",
+        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, chocolate, icing sugar, salt, raising agent (disodium diphosphate, sodium bicarbonate), flavouring, vanilla sandwich cookies.",
         allergens: "wheat (gluten), eggs, milk, soya. Prepared in a kitchen that handles other allergens.",
         layers: ["#E3C879", "#FFFDF4", "#D9B765", "#FFFDF4", "#E3C879", "#FFFDF4"]
       },
       {
         id: "chocolate-caramel",
         type: "product",
-        name: "Caramel Noir Cake Jar",
+        name: "Caramel Noir Dessert Jar",
         shortName: "Caramel Noir",
         subtitle: "Rich caramel layers",
         description: "Chocolate cake layered with caramel and smooth frosting. Deep, cosy and made for serious dessert lovers.",
@@ -3138,14 +3234,14 @@
         bg: "linear-gradient(135deg,#1B0C05 0%,#5C351C 52%,#D89952 100%)",
         image: "Images/choco.jpeg",
         infoImage: "Images/choco-info.jpeg",
-        ingredients: "Wheat flour, granulated sugar, brown sugar, sunflower oil, eggs, milk, condensed milk, cocoa powder, golden syrup, whipping cream, chocolate, vinegar, baking soda, salt, flavouring.",
+        ingredients: "Wheat flour, granulated sugar, brown sugar, sunflower oil, eggs, milk, condensed milk (milk), cocoa powder, golden syrup, chocolate (milk), chocolate, lemon juice, sodium bicarbonate, salt, flavouring.",
         allergens: "wheat (gluten), eggs, milk. Prepared in a kitchen that handles other allergens.",
         layers: ["#251006", "#F1D39A", "#4B220D", "#F1D39A", "#251006", "#F1D39A"]
       },
       {
         id: "strawberry-bliss",
         type: "product",
-        name: "Strawberry Bliss Cake Jar",
+        name: "Strawberry Bliss Dessert Jar",
         shortName: "Strawberry Bliss",
         subtitle: "Strawberry compote layers",
         description: "Soft strawberry sponge layered with strawberry compote and silky whipped cream for a fresh, fruity and indulgent treat.",
@@ -3155,24 +3251,24 @@
         bg: "linear-gradient(135deg,#7A0F2A 0%,#E8197A 48%,#FFD1E3 100%)",
         image: "Images/strawberry.png",
         infoImage: "Images/strawberry-info.jpeg",
-        ingredients: "Wheat flour, sugar, butter, eggs, milk, strawberry yoghurt, condensed milk, icing sugar, strawberry jam, fresh strawberries, lemon juice, baking powder, salt, flavouring, pink food colouring.",
+        ingredients: "Wheat flour, sugar, butter (milk), eggs, chocolate (milk), strawberry jam, fresh strawberries, raising agent (disodium diphosphate, sodium bicarbonate), salt, flavouring, colouring, whipping cream (milk).",
         allergens: "wheat (gluten), eggs, milk. Prepared in a kitchen that handles other allergens.",
         layers: ["#B3133A", "#FFF0F6", "#E94D75", "#FFF0F6", "#B3133A", "#FFF0F6"]
       },
       {
         id: "cookies-cream-noir",
         type: "product",
-        name: "Cookies & Cream Noir Cake Jar",
+        name: "Cookies & Cream Noir Dessert Jar",
         shortName: "Cookies & Cream Noir",
         subtitle: "Cookies and cream layers",
-        description: "Chocolate sponge layered with cookies and cream filling for a creamy, crunchy and chocolatey dessert jar.",
+        description: "Dark cookies and cream cake layered with silky cream for a rich, crunchy indulgence.",
         price: 7.28,
         jarCount: 1,
         tag: "Cookie Lover",
         bg: "linear-gradient(135deg,#0F0F0F 0%,#3A2A2A 48%,#E8E1D8 100%)",
         image: "Images/cookies.png",
         infoImage: "Images/cookies-info.jpeg",
-        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, butter, whipping cream, icing sugar, cocoa powder, chocolate, baking powder, salt, flavouring, chocolate sandwich cookies (contains wheat, soya).",
+        ingredients: "Wheat flour, sugar, eggs, milk, sunflower oil, butter (milk), icing sugar, cocoa powder, chocolate, raising agent (disodium diphosphate, sodium bicarbonate), salt, flavouring, chocolate sandwich cookies.",
         allergens: "wheat (gluten), eggs, milk, soya. Prepared in a kitchen that handles other allergens.",
         layers: ["#171717", "#F7F2EC", "#2D211D", "#F7F2EC", "#171717", "#F7F2EC"]
       }
@@ -3223,7 +3319,7 @@
         jarCount: 5,
         tag: "Best Value",
         bg: "linear-gradient(135deg,#4B2D0E 0%,#C9A84C 100%)",
-        image: "Images/5-combo.png",
+        image: "Images/5-combo.PNG",
         featured: true
       }
     ];
@@ -3259,7 +3355,7 @@
     }
 
     function createIllustratedJar(product, compact = false) {
-      return `<div class="jar ${compact ? "jar-compact" : ""}"><div class="jar-lid"></div><div class="jar-body">${(product.layers || products[0].layers).map(colour => `<div class="jar-layer" style="background: ${colour}"></div>`).join("")}<div class="jar-shine"></div><div class="jar-label"><strong>LC</strong><span>Cake Jar</span></div></div></div>`;
+      return `<div class="jar ${compact ? "jar-compact" : ""}"><div class="jar-lid"></div><div class="jar-body">${(product.layers || products[0].layers).map(colour => `<div class="jar-layer" style="background: ${colour}"></div>`).join("")}<div class="jar-shine"></div><div class="jar-label"><strong>LC</strong><span>Dessert Jar</span></div></div></div>`;
     }
 
     function createJar(product, compact = false) {
@@ -3417,12 +3513,12 @@ function createBundleJarsFallback(bundle) {
         container.innerHTML = `<div class="empty-cart"><div class="empty-icon">🛒</div><h3>Your cart is empty</h3><p style="color: var(--muted);">Add at least 2 jars to get started.</p><button class="btn btn-primary" onclick="closeModal('cart-modal')">Continue shopping</button></div>`;
         return;
       }
-      container.innerHTML = `<div class="cart-items">${cart.map(item => `<div class="cart-item">${item.type === "bundle" ? `<div class="jar-stage jar-stage-compact" style="background:${item.bg}">${createBundleJarsFallback(item)}</div>` : createJar(item, true)}<div style="flex: 1;"><div class="cart-line-top"><div><strong>${item.shortName}</strong><span>${item.type === "bundle" ? `${item.jarCount} jars per bundle` : `${formatMoney(item.price)} each`}</span></div><button class="remove-btn" onclick="removeAll('${item.id}')">×</button></div><div class="cart-line-bottom"><div class="qty-control"><button type="button" onclick="removeOne('${item.id}')">−</button><strong>${item.qty}</strong><button type="button" onclick="addToCart('${item.id}')">+</button></div><strong>${formatMoney(item.price * item.qty)}</strong></div></div></div>`).join("")}</div>${totalJars < 2 ? `<div class="min-order-warning">Minimum order is 2 jars. Please add one more jar or choose a bundle before checkout.</div>` : ""}<div class="summary"><div class="summary-row"><span>Total jars</span><strong>${totalJars}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>Delivery</span><strong>Choose at checkout</strong></div><div class="summary-total"><span>Total before delivery</span><span>${formatMoney(getSubtotal())}</span></div></div><button class="btn btn-primary" style="width: 100%; margin-top: 18px;" onclick="startCheckout()" ${totalJars < 2 ? "disabled" : ""}>💳 Checkout securely</button>`;
+      container.innerHTML = `<div class="cart-items">${cart.map(item => `<div class="cart-item">${item.type === "bundle" ? `<img class="cart-bundle-image" src="${item.image}" alt="${item.shortName}" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"><div class="jar-stage jar-stage-compact" style="background:${item.bg}; display:none;">${createBundleJarsFallback(item)}</div>` : createJar(item, true)}<div style="flex: 1;"><div class="cart-line-top"><div><strong>${item.shortName}</strong><span>${item.type === "bundle" ? `${item.jarCount} jars per bundle` : `${formatMoney(item.price)} each`}</span></div><button class="remove-btn" onclick="removeAll('${item.id}')">×</button></div><div class="cart-line-bottom"><div class="qty-control"><button type="button" onclick="removeOne('${item.id}')">−</button><strong>${item.qty}</strong><button type="button" onclick="addToCart('${item.id}')">+</button></div><strong>${formatMoney(item.price * item.qty)}</strong></div></div></div>`).join("")}</div>${totalJars < 2 ? `<div class="min-order-warning">Minimum order is 2 jars. Please add one more jar or choose a bundle before checkout.</div>` : ""}<div class="summary"><div class="summary-row"><span>Total jars</span><strong>${totalJars}</strong></div><div class="summary-row"><span>Subtotal</span><strong>${formatMoney(getSubtotal())}</strong></div><div class="summary-row"><span>Delivery</span><strong>Choose at checkout</strong></div><div class="summary-total"><span>Total before delivery</span><span>${formatMoney(getSubtotal())}</span></div></div><button class="btn btn-primary" style="width: 100%; margin-top: 18px;" onclick="startCheckout()" ${totalJars < 2 ? "disabled" : ""}>💳 Checkout securely</button>`;
     }
 
     function renderFulfilmentOptions() {
       const jars = getTotalJars();
-      return `<div class="checkout-option-grid"><label class="fulfilment-option"><div><strong>Pickup</strong><small>Collect from Leemah Cakes n More. No delivery fee.</small></div><div><strong>${formatMoney(0)}</strong><input type="radio" name="fulfilment" value="pickup" ${fulfilmentOption === "pickup" ? "checked" : ""} onchange="setFulfilmentOption('pickup')"></div></label><label class="fulfilment-option"><div><strong>Standard Delivery</strong><small>Delivery takes 1-3 working days.</small></div><div><strong>${formatMoney(getDeliveryFor("second"))}</strong><input type="radio" name="fulfilment" value="second" ${fulfilmentOption === "second" ? "checked" : ""} onchange="setFulfilmentOption('second')"></div></label><label class="fulfilment-option"><div><strong>Special Delivery</strong><small>Delivery is guaranteed the next day.</small></div><div><strong>${formatMoney(getDeliveryFor("first"))}</strong><input type="radio" name="fulfilment" value="first" ${fulfilmentOption === "first" ? "checked" : ""} onchange="setFulfilmentOption('first')"></div></label></div>`;
+      return `<div class="checkout-option-grid"><label class="fulfilment-option"><div><strong>Pickup</strong><small>Collect from Leemah Cakes N More. No delivery fee.</small></div><div><strong>${formatMoney(0)}</strong><input type="radio" name="fulfilment" value="pickup" ${fulfilmentOption === "pickup" ? "checked" : ""} onchange="setFulfilmentOption('pickup')"></div></label><label class="fulfilment-option"><div><strong>Standard Delivery</strong><small>Delivery takes 1-3 working days.</small></div><div><strong>${formatMoney(getDeliveryFor("second"))}</strong><input type="radio" name="fulfilment" value="second" ${fulfilmentOption === "second" ? "checked" : ""} onchange="setFulfilmentOption('second')"></div></label><label class="fulfilment-option"><div><strong>Special Delivery</strong><small>Delivery is guaranteed the next day.</small></div><div><strong>${formatMoney(getDeliveryFor("first"))}</strong><input type="radio" name="fulfilment" value="first" ${fulfilmentOption === "first" ? "checked" : ""} onchange="setFulfilmentOption('first')"></div></label></div>`;
     }
     function setFulfilmentOption(option) { fulfilmentOption = option; renderCheckout(false); }
 
